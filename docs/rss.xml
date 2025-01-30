@@ -1,2 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://Ayx03.github.io/Gmeek</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Mon, 24 Jun 2024 21:09:17 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>Hello Gmeek</title><link>https://Ayx03.github.io/Gmeek/post/Hello%20Gmeek.html</link><description>Hello Gmeek。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/Hello%20Gmeek.html</guid><pubDate>Mon, 24 Jun 2024 21:08:52 +0000</pubDate></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://Ayx03.github.io/Gmeek</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Thu, 30 Jan 2025 16:29:49 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>PaperMC 服务器允许刷线机/无头活塞等配置</title><link>https://Ayx03.github.io/Gmeek/post/PaperMC%20-fu-wu-qi-yun-xu-shua-xian-ji---wu-tou-huo-sai-deng-pei-zhi.html</link><description>服务器目录/config/paper-global.yml 中修改以下配置：
+
+无头活塞：
+
+```
+  allow-headless-pistons: true
+```
+
+刷线机：
+
+```
+  allow-tripwire-disarming-exploits: true
+```。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/PaperMC%20-fu-wu-qi-yun-xu-shua-xian-ji---wu-tou-huo-sai-deng-pei-zhi.html</guid><pubDate>Thu, 30 Jan 2025 16:26:35 +0000</pubDate></item><item><title>Hello Gmeek</title><link>https://Ayx03.github.io/Gmeek/post/Hello%20Gmeek.html</link><description>Hello Gmeek。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/Hello%20Gmeek.html</guid><pubDate>Mon, 24 Jun 2024 21:08:52 +0000</pubDate></item></channel></rss>
