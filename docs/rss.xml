@@ -1,5 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Mon, 24 Nov 2025 10:40:05 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_This is Sparta_菜狗杯_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_This%20is%20Sparta_-cai-gou-bei-_ctf.show.html</link><description>刚看到还以为和斯巴达有关。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_This%20is%20Sparta_-cai-gou-bei-_ctf.show.html</guid><pubDate>Mon, 24 Nov 2025 10:36:16 +0000</pubDate></item><item><title>WriteUp_@bash_菜狗杯_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_%40bash_-cai-gou-bei-_ctf.show.html</link><description>Atbash解码（解密？）得到明文`LOVEMUMUZI`，使用`ctfshow{}`包裹得到`ctfshow{LOVEMUMUZI}`
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Mon, 24 Nov 2025 10:55:12 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_碧海蓝天_菜狗杯_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_-bi-hai-lan-tian-_-cai-gou-bei-_ctf.show.html</link><description>这就是所谓的 OSINT（Open Source Intelligence，开源情报？）吧，感觉会挺有意思
+
+使用 HoneyView 打开发现图片 EXIF 中有 GPS（？其实应该是 GNSS，拍摄时不一定是完全或者部分通过 GPS 获取的）经纬度信息，可以直接打开 Google 地图查看对应位置
+
+&lt;img width='540' height='798' alt='Image' src='https://github.com/user-attachments/assets/6fa88abc-44bc-4f21-b052-d59cddb866ed' /&gt;
+
+发现位置在中国大陆，在中国大陆 Google 地图可能会出现漂移，不过其实这里已经可以确定是厦门市，猜测到是鼓浪屿了，就是不太确定
+
+&lt;img width='2560' height='1600' alt='Image' src='https://github.com/user-attachments/assets/28cf026b-56e3-49bb-b51e-0b3fac68a7bc' /&gt;
+
+可以手动复制经纬度，也可以将图片上传到 &lt;https://www.strerr.com/cn/exif.html&gt; 这种读取图片 EXIF 信息的工具一键打开高德地图查看对应位置
+
+&lt;img width='2560' height='1600' alt='Image' src='https://github.com/user-attachments/assets/ef1a8b57-f4ba-4408-8c7f-59252633bddf' /&gt;
+
+打开高德地图提示`在港仔后海滨沙滩附近`，尝试提交`ctfshow{厦门市_港仔后海滨沙滩}`不正确，后提交`ctfshow{厦门市_鼓浪屿}`通过。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_-bi-hai-lan-tian-_-cai-gou-bei-_ctf.show.html</guid><pubDate>Mon, 24 Nov 2025 10:54:32 +0000</pubDate></item><item><title>WriteUp_This is Sparta_菜狗杯_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_This%20is%20Sparta_-cai-gou-bei-_ctf.show.html</link><description>刚看到还以为和斯巴达有关。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_This%20is%20Sparta_-cai-gou-bei-_ctf.show.html</guid><pubDate>Mon, 24 Nov 2025 10:36:16 +0000</pubDate></item><item><title>WriteUp_@bash_菜狗杯_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_%40bash_-cai-gou-bei-_ctf.show.html</link><description>Atbash解码（解密？）得到明文`LOVEMUMUZI`，使用`ctfshow{}`包裹得到`ctfshow{LOVEMUMUZI}`
 
 工具：&lt;https://www.boxentriq.com/code-breaking/atbash-cipher&gt;
 
