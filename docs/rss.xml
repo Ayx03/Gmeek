@@ -1,5 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Sun, 23 Nov 2025 11:12:25 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_类型7_菜狗杯_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_-lei-xing-7_-cai-gou-bei-_ctf.show.html</link><description>密文：`094F5A0F0A0D1805103B0B3D143117183B720438350A45550967674D1E064F2969784440455A460F1A1B`
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Mon, 24 Nov 2025 10:27:04 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_@bash_菜狗杯_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_%40bash_-cai-gou-bei-_ctf.show.html</link><description>Atbash解码（解密？）得到明文`LOVEMUMUZI`，使用`ctfshow{}`包裹得到`ctfshow{LOVEMUMUZI}`
+
+工具：&lt;https://www.boxentriq.com/code-breaking/atbash-cipher&gt;
+
+题目：
+
+```
+@bash
+100
+感谢@g4师傅供题，太棒了！
+
+密文如下： OLEVNFNFAR
+
+flag格式为 ctfshow{明文}
+```。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_%40bash_-cai-gou-bei-_ctf.show.html</guid><pubDate>Mon, 24 Nov 2025 10:26:33 +0000</pubDate></item><item><title>WriteUp_类型7_菜狗杯_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_-lei-xing-7_-cai-gou-bei-_ctf.show.html</link><description>密文：`094F5A0F0A0D1805103B0B3D143117183B720438350A45550967674D1E064F2969784440455A460F1A1B`
 
 使用工具：&lt;https://www.bejson.com/encrypt/type7_decode/&gt;
 
