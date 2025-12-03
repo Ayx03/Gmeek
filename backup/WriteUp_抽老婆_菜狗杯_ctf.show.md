@@ -77,3 +77,5 @@ if __name__ == '__main__':
     # generate a session with isadmin = True and output in the console
 
 ```
+
+我得承认我其实看了官方 WriteUp 才知道 /download 下面有任意目录读取（
