@@ -1,4 +1,4 @@
-阅读首页和 `/getwifi` 的前端源代码没找到什么有价值的信息，注意到下载按钮指向类似 `/download?file=be7fa00ac8a16c8266ce3ee4f4e318cc.jpg` 的路径，尝试清空 `file=` 后面的内容访问发现报错：`IsADirectoryError: [Errno 21] Is a directory: '/app/static/img/'`，看到这个页面就一股 Python 味，猜测源代码文件名为 `app.py` ~~因为我之前用 Python 写 Web 项目的时候就真的所有代码都放在这个文件里~~。
+阅读首页和 `/getwifi` 的前端源代码没找到什么有价值的信息，注意到下载按钮指向类似 `/download?file=be7fa00ac8a16c8266ce3ee4f4e318cc.jpg` 的路径，尝试清空 `file=` 后面的内容访问发现报错：`IsADirectoryError: [Errno 21] Is a directory: '/app/static/img/'`，看到这个页面就一股 Python 味，猜测源代码文件名为 `app.py` ~~因为[我之前用 Python 写 Web 项目](https://github.com/Ayx03/futureCampusPlatform)的时候就真的所有代码都放在这个文件里~~。
 
 <img width="2560" height="1600" alt="Image" src="https://github.com/user-attachments/assets/7098b2f1-b2f6-4643-971c-25001f570745" />
 
