@@ -1,5 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Tue, 12 May 2026 02:24:04 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web4_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web4_Web-ru-men-_ctf.show.html</link><description>查看 `/robots.txt`，发现如下内容：
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Tue, 12 May 2026 02:27:05 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web5_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web5_Web-ru-men-_ctf.show.html</link><description>题目提示 `phps源码泄露有时候能帮上忙`，访问 `/index.phps` 下载源代码发现 flag `ctfshow{86c56ec5-b411-4111-9695-078acbddd348}`
+```
+&lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-01 14:14:17
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-01 14:34:53
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+//ctfshow{86c56ec5-b411-4111-9695-078acbddd348}
+echo 'web5:where is flag ?'
+
+```。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_web5_Web-ru-men-_ctf.show.html</guid><pubDate>Tue, 12 May 2026 02:26:34 +0000</pubDate></item><item><title>WriteUp_web4_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web4_Web-ru-men-_ctf.show.html</link><description>查看 `/robots.txt`，发现如下内容：
 
 &lt;img width='1564' height='193' alt='Image' src='https://github.com/user-attachments/assets/3af08354-0108-4e3a-a714-680780f40c02' /&gt;
 
