@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Tue, 12 May 2026 02:27:05 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web5_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web5_Web-ru-men-_ctf.show.html</link><description>题目提示 `phps源码泄露有时候能帮上忙`，访问 `/index.phps` 下载源代码发现 flag `ctfshow{86c56ec5-b411-4111-9695-078acbddd348}`
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Tue, 12 May 2026 02:29:33 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web5_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web5_Web-ru-men-_ctf.show.html</link><description>题目提示 `phps源码泄露有时候能帮上忙`，访问 `/index.phps` 下载源代码发现 flag `ctfshow{86c56ec5-b411-4111-9695-078acbddd348}`
 ```
 &lt;?php
 
@@ -30,7 +30,12 @@ Disallow: /flagishere.txt
 
 &lt;img width='1584' height='179' alt='Image' src='https://github.com/user-attachments/assets/a28eae2c-655a-413c-97b3-dfd61939d538' /&gt;
 
-`ctfshow{e3690c8b-9b14-41af-a418-dddfea577001}`。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_web4_Web-ru-men-_ctf.show.html</guid><pubDate>Tue, 12 May 2026 02:23:36 +0000</pubDate></item><item><title>WriteUp_web2_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web2_Web-ru-men-_ctf.show.html</link><description>`Ctrl + U` 或在 URL 前添加 `view-source:` 查看源代码，获得 flag `ctfshow{e817122d-b558-475f-bc26-cf951ea7870c}`
+`ctfshow{e3690c8b-9b14-41af-a418-dddfea577001}`。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_web4_Web-ru-men-_ctf.show.html</guid><pubDate>Tue, 12 May 2026 02:23:36 +0000</pubDate></item><item><title>WriteUp_web3_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web3_Web-ru-men-_ctf.show.html</link><description>浏览器中按下 `F12` 或 `Ctrl + Shift + I` 打开开发人员工具，选择网络（Network）选项卡，刷新网页点开第一个请求发现 flag 在响应标头中：`
+ctfshow{a241d6db-7139-4960-b3a4-90be35bfb7c8}`
+
+&lt;img width='2485' height='1511' alt='Image' src='https://github.com/user-attachments/assets/0c5aefdb-9749-4dc5-b64d-df5cce274644' /&gt;
+
+&lt;!--&lt;img width='2485' height='1511' alt='Image' src='https://github.com/user-attachments/assets/e4bb7c32-cb56-445c-af93-f0132a4a949d' /&gt;--&gt;。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_web3_Web-ru-men-_ctf.show.html</guid><pubDate>Tue, 21 Apr 2026 10:40:19 +0000</pubDate></item><item><title>WriteUp_web2_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web2_Web-ru-men-_ctf.show.html</link><description>`Ctrl + U` 或在 URL 前添加 `view-source:` 查看源代码，获得 flag `ctfshow{e817122d-b558-475f-bc26-cf951ea7870c}`
 ```html
 &lt;html&gt;
 &lt;body&gt;
