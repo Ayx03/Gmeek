@@ -1,5 +1,29 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Mon, 25 May 2026 13:54:35 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web14_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web14_Web-ru-men-_ctf.show.html</link><description>题目提示：
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Mon, 25 May 2026 14:32:00 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web15_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web15_Web-ru-men-_ctf.show.html</link><description>题目提示：`公开的信息比如邮箱，可能造成信息泄露，产生严重后果`
+
+靶机首页页面最下面有一个 QQ 邮箱：`1156631961@qq.com`
+
+&lt;img width='2349' height='1285' alt='Image' src='https://github.com/user-attachments/assets/962fcaab-2259-45fe-99ed-c06001883bb9' /&gt;
+
+访问 `靶机域名/admin` 发现后台登陆系统有忘记密码功能
+
+&lt;img width='2349' height='1285' alt='Image' src='https://github.com/user-attachments/assets/176490aa-cf0e-4933-9641-ec54af44dd5c' /&gt;
+
+尝试点击忘记密码，发现密保问题是`我的所在地是哪个城市？`
+
+&lt;img width='2349' height='1285' alt='Image' src='https://github.com/user-attachments/assets/f5ab5691-6592-4bd9-ab42-e1a60a97dd11' /&gt;
+
+我们使用 QQ 搜索这个邮箱对应的 QQ 号：`1156631961`，发现公开的资料卡上显示`现居陕西西安`
+
+&lt;img width='1024' height='1084' alt='Image' src='https://github.com/user-attachments/assets/5776aedf-2769-4bd6-abe3-ffb59af4fabb' /&gt;
+
+&lt;img width='576' height='1280' alt='Image' src='https://github.com/user-attachments/assets/df2dac38-6c79-4037-b0d7-d9e7605ab269' /&gt;
+
+在忘记密码页面输入`西安`并提交，提示`您的密码已重置为admin7789`
+
+&lt;img width='2349' height='1285' alt='Image' src='https://github.com/user-attachments/assets/f895a30d-7316-4490-ab8e-1f0b77f3c594' /&gt;
+
+回到 `靶机域名/admin`，使用用户名 `admin` 密码 `admin7789` 登录，获得 flag `ctfshow{206f7e71-d4ed-4b10-98dd-bb0309388641}`。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_web15_Web-ru-men-_ctf.show.html</guid><pubDate>Mon, 25 May 2026 14:31:28 +0000</pubDate></item><item><title>WriteUp_web14_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web14_Web-ru-men-_ctf.show.html</link><description>题目提示：
 ```
 小0day:某编辑器最新版默认配置下，如果目录不存在，则会遍历服务器根目录
 有时候源码里面就能不经意间泄露重要(editor)的信息,默认配置害死人
