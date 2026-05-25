@@ -9,3 +9,4 @@ Unlock Hint for 0 points
 
 查找flag.ctfshow.com域名下的txt记录
 ```
+又忘记设置标签了，编辑触发重新部署（
