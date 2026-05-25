@@ -1,5 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Mon, 25 May 2026 13:23:21 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web12_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web12_Web-ru-men-_ctf.show.html</link><description>题目提示：`有时候网站上的公开信息，就是管理员常用密码`
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Mon, 25 May 2026 13:28:41 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web13_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web13_Web-ru-men-_ctf.show.html</link><description>题目提示：`技术文档里面不要出现敏感信息，部署到生产环境后及时修改默认密码`
+
+推测部署到生产环境使用了默认密码，并且默认密码就在技术文档里
+
+在页面上搜索 `doc` 发现底部有个 `document` 链接
+
+&lt;img width='2560' height='1380' alt='Image' src='https://github.com/user-attachments/assets/a8321705-7724-4f21-be3a-1e7afc47cc9f' /&gt;
+
+打开后发现第二页就写着默认后台地址、默认登录用户名和默认密码
+
+&lt;img width='2560' height='1380' alt='Image' src='https://github.com/user-attachments/assets/c7a84267-4b2f-4889-9021-1ece76f31d64' /&gt;
+
+访问 `/system1103/login.php`，使用用户名 `admin` 密码 `admin1103` 登录后获得 flag `ctfshow{dea5c12a-2f7c-4d1e-954a-8a8acd7172ac}`。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_web13_Web-ru-men-_ctf.show.html</guid><pubDate>Mon, 25 May 2026 13:28:09 +0000</pubDate></item><item><title>WriteUp_web12_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web12_Web-ru-men-_ctf.show.html</link><description>题目提示：`有时候网站上的公开信息，就是管理员常用密码`
 
 看页面估计就是没怎么改的网页模板，拉到页面最底下有个 `Help Line Number : 372619038`，根据提示推测 `372619038` 就是管理员密码，接下来找登录入口，靶机容器域名后面随手输入个 `/admin` 浏览器就弹窗提示验证了，使用用户名 `admin` 密码 `372619038` 成功通过验证获得 flag `ctfshow{9e6f478f-719b-4cb7-88e4-48ca22648c77}`。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_web12_Web-ru-men-_ctf.show.html</guid><pubDate>Mon, 25 May 2026 13:22:56 +0000</pubDate></item><item><title>WriteUp_web11_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web11_Web-ru-men-_ctf.show.html</link><description>此题由于域名无法查询到包含 flag 的 TXT 记录无法完成
 ```
