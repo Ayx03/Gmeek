@@ -1,5 +1,60 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Tue, 26 May 2026 08:10:52 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web18_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web18_Web-ru-men-_ctf.show.html</link><description>题目提示：`不要着急，休息，休息一会儿，玩101分给你flag`
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Tue, 26 May 2026 08:40:01 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web19_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web19_Web-ru-men-_ctf.show.html</link><description>题目提示：`密钥什么的，就不要放在前端了`
+
+推测某个密钥放在前端了
+
+查看网页源代码可以发现密码使用AES CBC ZeroPadding加解密，密钥和偏移量以及正确密码的加密结果也都暴露在了前端，虽然非常鸡贼地把存放密码地变量从 `password` 改成了 `pazzword`，但是因为 index 代码量实在太少了一眼就能发现，这里也能看到账号是 admin
+
+```html
+&lt;script type='text/javascript'&gt;
+    function checkForm(){
+        var key = '0000000372619038';
+        var iv = 'ilove36dverymuch';
+        var pazzword = $('#pazzword').val();
+        pazzword = encrypt(pazzword,key,iv);
+        $('#pazzword').val(pazzword);
+        $('#loginForm').submit();
+        
+    }
+    function encrypt(data,key,iv) { //key,iv：16位的字符串
+        var key1  = CryptoJS.enc.Latin1.parse(key);
+        var iv1   = CryptoJS.enc.Latin1.parse(iv);
+        return CryptoJS.AES.encrypt(data, key1,{
+            iv : iv1,
+            mode : CryptoJS.mode.CBC,
+            padding : CryptoJS.pad.ZeroPadding
+        }).toString();
+    }
+
+&lt;/script&gt;
+    &lt;!--
+    error_reporting(0);
+    $flag='fakeflag'
+    $u = $_POST['username'];
+    $p = $_POST['pazzword'];
+    if(isset($u) &amp;&amp; isset($p)){
+        if($u==='admin' &amp;&amp; $p ==='a599ac85a73384ee3219fa684296eaa62667238d608efa81837030bd1ce1bf04'){
+            echo $flag;
+        }
+}
+    --&gt;
+&lt;/html&gt;
+```
+
+`aes.js` 的注释中有加解密函数，我试图使用这个函数解密但是不知道 cfg 是什么，就放弃了
+
+```javascript
+    /**
+     * Shortcut functions to the cipher's object interface.
+     *
+     * @example
+     *
+     *     var ciphertext = CryptoJS.AES.encrypt(message, key, cfg);
+     *     var plaintext  = CryptoJS.AES.decrypt(ciphertext, key, cfg);
+     */
+```
+
+然后使用找到的第三个 AES 网页工具（&lt;https://www.mklab.cn/utils/aes&gt;）解密出了密码，使用账号 `admin` 密码 `i_want_a_36d_girl` 登录获得 flag `ctfshow{acf28a70-65c0-49ba-9935-021cffa01a25}`。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_web19_Web-ru-men-_ctf.show.html</guid><pubDate>Tue, 26 May 2026 08:39:31 +0000</pubDate></item><item><title>WriteUp_web18_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web18_Web-ru-men-_ctf.show.html</link><description>题目提示：`不要着急，休息，休息一会儿，玩101分给你flag`
 
 估计是一个游戏，需要修改分数获得 flag，当然你也可以就硬玩
 
