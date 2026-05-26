@@ -1,5 +1,44 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Tue, 26 May 2026 08:03:07 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web16_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web16_Web-ru-men-_ctf.show.html</link><description>题目提示：对于测试用的探针，使用完毕后要及时删除，可能会造成信息泄露
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Tue, 26 May 2026 08:05:19 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web17_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web17_Web-ru-men-_ctf.show.html</link><description>题目提示：`备份的sql文件会泄露敏感信息`
+
+回忆一下 sql 文件的扩展名好像就是 sql，也可能不同的数据库管理系统导出的不一样
+
+尝试了访问 `db.sql` `1.sql` 最后发现是 `backup.sql`，使用任意文本编辑器（如记事本）打开文件即可找到 flag `ctfshow{a2ba4307-863b-4c2d-953b-12244304c73e}`
+```
+CREATE DATABASE IF NOT EXISTS ctfshow;
+USE ctfshow;
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE IF NOT EXISTS `products` (
+  `product_id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `sku` varchar(14) NOT NULL,
+  `price` decimal(15,2) NOT NULL,
+  `image` varchar(50) NOT NULL,
+  PRIMARY KEY (`product_id`),
+  UNIQUE KEY `sku` (`sku`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `ctfshow_secret` (
+  `secret` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+INSERT INTO `ctfshow_secret` VALUES ('ctfshow{a2ba4307-863b-4c2d-953b-12244304c73e}');
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`product_id`, `name`, `sku`, `price`, `image`) VALUES
+(1, 'Iphone', 'IPHO001', '400.00', 'images/iphone.jpg'),
+(2, 'Camera', 'CAME001', '700.00', 'images/camera.jpg'),
+(3, 'Watch', 'WATC001', '100.00', 'images/watch.jpg');
+
+```。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_web17_Web-ru-men-_ctf.show.html</guid><pubDate>Tue, 26 May 2026 08:04:53 +0000</pubDate></item><item><title>WriteUp_web16_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web16_Web-ru-men-_ctf.show.html</link><description>题目提示：对于测试用的探针，使用完毕后要及时删除，可能会造成信息泄露
 
 tz.php函数检测并不会返回结果，但是有个不起眼的 PHPINFO 链接，点开搜索 flag 即可找到 flag
 
