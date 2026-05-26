@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Mon, 25 May 2026 14:32:00 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web15_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web15_Web-ru-men-_ctf.show.html</link><description>题目提示：`公开的信息比如邮箱，可能造成信息泄露，产生严重后果`
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Tue, 26 May 2026 08:03:07 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web16_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web16_Web-ru-men-_ctf.show.html</link><description>题目提示：对于测试用的探针，使用完毕后要及时删除，可能会造成信息泄露
+
+tz.php函数检测并不会返回结果，但是有个不起眼的 PHPINFO 链接，点开搜索 flag 即可找到 flag
+
+&lt;img width='1920' height='1080' alt='Image' src='https://github.com/user-attachments/assets/8a4d1b15-4c6a-426a-804b-e8a3e5ac835c' /&gt;
+
+&lt;img width='1920' height='1080' alt='Image' src='https://github.com/user-attachments/assets/f6fa1a94-907b-46a2-8e8a-d8876953d133' /&gt;
+
+哈哈又忘记加标签了编辑触发重新部署。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_web16_Web-ru-men-_ctf.show.html</guid><pubDate>Tue, 26 May 2026 08:01:05 +0000</pubDate></item><item><title>WriteUp_web15_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web15_Web-ru-men-_ctf.show.html</link><description>题目提示：`公开的信息比如邮箱，可能造成信息泄露，产生严重后果`
 
 靶机首页页面最下面有一个 QQ 邮箱：`1156631961@qq.com`
 
