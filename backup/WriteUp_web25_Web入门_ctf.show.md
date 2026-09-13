@@ -126,6 +126,10 @@ Linux version 5.4.0-163-generic (buildd@lcy02-amd64-067) (gcc version 9.4.0 (Ubu
 PS C:\phpstudy_pro\Extensions\php\php7.3.4nts> .\php.exe -r "mt_srand((int)2508326963);echo mt_rand();echo '|';echo mt_rand()+mt_rand();"
 1514623366|2335728148
 ```
+其实网页版 [PHP Playground](https://php-play.dev/?c=DwfgDgFmAEC2AuB9AzgJwIYDsAmAKXAlpvAJQBMArAAwAcAzGQGwCcjdJA3AKYDGEA9nCQYcuTrwHQARAB8p3PoISIReEgGplqsRxAA%2BIA&v=8.5&f=html) 也不是不能用，只是需要在随机数种子前加上 `(int)` 强制类型转换，而且会报一条 Warning
+```
+<?php mt_srand((int)2508326963);echo mt_rand();echo "|";echo mt_rand()+mt_rand();?>
+```
 在 URL 后拼接 `/?r=1514623366`（第一个随机数），点击 HackBar 中的 MODIFY HEADER 并将 Cookie 设为 `token=2335728148`（第二个和第三个随机数的和），点击 Execute 即可获得 flag `ctfshow{7e19dc1e-0d07-47ce-a791-29b87681650c}`。
 
 <img width="1062" height="375" alt="Image" src="https://github.com/user-attachments/assets/07ff1d0c-a475-4783-a1a9-c315cfe9b53c" />
