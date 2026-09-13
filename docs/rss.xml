@@ -1,5 +1,39 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Sun, 13 Sep 2026 08:15:11 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web24_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web24_Web-ru-men-_ctf.show.html</link><description>准备像上一题一样循环暴力破解，跑的时候卡住了跑不出来突然发现这不是固定种子随机数吗，直接把随机数算出来就行了（也符合题目描述中的`爆个🔨`），因为这种伪随机数算法对于同一个随机数种子来说每次算出的随机数都是相同的，在 URL 后拼接 `/?r=1155388967` 即可获得 flag `ctfshow{e0b5f9a7-dcc0-425a-bd48-f56f315ab76a}`
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Sun, 13 Sep 2026 09:34:59 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web25_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web25_Web-ru-men-_ctf.show.html</link><description>题目提示`爆个🔨，不爆了`，所以这题还是得智取
+```php
+&lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-03 13:56:57
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-03 15:47:33
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+
+error_reporting(0);
+include('flag.php');
+if(isset($_GET['r'])){
+    $r = $_GET['r'];
+    mt_srand(hexdec(substr(md5($flag), 0,8)));
+    $rand = intval($r)-intval(mt_rand());
+    if((!$rand)){
+        if($_COOKIE['token']==(mt_rand()+mt_rand())){
+            echo $flag;
+        }
+    }else{
+        echo $rand;
+    }
+}else{
+    highlight_file(__FILE__);
+    echo system('cat /proc/version');
+}
+```
+随机数种子是 $flag 的 md5 值的前 8 位的 16 进制转 10 进制，$rand 是输入的 r 的值减去生成的第一个随机数，需要COOKIE中的token==第二和第三个随机数才会显示flag，否则只会显示 $rand。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_web25_Web-ru-men-_ctf.show.html</guid><pubDate>Sun, 13 Sep 2026 09:31:20 +0000</pubDate></item><item><title>WriteUp_web24_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web24_Web-ru-men-_ctf.show.html</link><description>准备像上一题一样循环暴力破解，跑的时候卡住了跑不出来突然发现这不是固定种子随机数吗，直接把随机数算出来就行了（也符合题目描述中的`爆个🔨`），因为这种伪随机数算法对于同一个随机数种子来说每次算出的随机数都是相同的，在 URL 后拼接 `/?r=1155388967` 即可获得 flag `ctfshow{e0b5f9a7-dcc0-425a-bd48-f56f315ab76a}`
 ```php
 &lt;?php
     // for($i=0;;$i++) {
