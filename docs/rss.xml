@@ -1,5 +1,31 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Sun, 13 Sep 2026 09:34:59 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web25_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web25_Web-ru-men-_ctf.show.html</link><description>题目提示`爆个🔨，不爆了`，所以这题还是得智取
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Sun, 13 Sep 2026 11:14:08 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web26_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web26_Web-ru-men-_ctf.show.html</link><description>题目提示`这个可以爆`，访问靶机地址发现是一个类似网站程序安装配置数据库的地址，输入默认的 localhost/3306/ctf/root/123456 和把密码修改成 root 都提示 `数据库连接失败`，就在我想找个密码字典来爆破一下的时候突然发现五个文本框都空着什么都不填点击 `确认无误，开始安装` 居然提示`数据库连接成功`，但是在 Edge 浏览器开发人员工具的网络选项卡中看不到对 `checkdb.php` 和 `install.php` 的两个请求的预览和响应，于是复制 `checkdb.php` 的请求 URL 和负载 `a=&amp;p=&amp;d=&amp;u=&amp;pass=` 使用 HackBar 发送请求居然就获得了 flag `ctfshow{545ffbc5-7abf-4aea-bf07-a9935ac2b98d}`，这应该是一个 bug 或者说非预期做法，因为题目的 Hint 提示说`使用Chrome浏览器抓包，进行暴力破解密码`，使用 Chrome 测试也是一样的表现，使用 Firefox 发现向 `checkdb.php` 发送的请求显示 NS_BINDING_ABORTED，也不知道是什么原因，图片下面是 Gemini 3.6 Flash 的回答
+
+&lt;img width='2554' height='1523' alt='Image' src='https://github.com/user-attachments/assets/c135b38a-42e6-4d86-b418-87b83990e687' /&gt;
+
+&lt;img width='2136' height='759' alt='Image' src='https://github.com/user-attachments/assets/6013ea44-bd1d-45d5-b6b7-4c6cb84a8f27' /&gt;
+
+根据你贴出的前端 HTML/JS 源码，真相完全大白了！
+
+前端代码有两个非常典型的**设计漏洞/BUG**，正好完美解释了你遇到的所有现象：
+
+---
+
+### 原因一：为什么网络请求提示 `NS_BINDING_ABORTED` / 看不到响应？
+
+看按钮和 `&lt;form&gt;` 的写法：
+
+```html
+&lt;form action=''&gt;
+    ...
+    &lt;div class='pc-kk-form-btn'&gt;
+        &lt;button onclick='check();'&gt;确认无误，开始安装&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+
+```
+
+1. `&lt;button&gt;` 标签在 `&lt;form&gt;` 内部如果没有显式指定 `type='button'`，默认类型就是 **`type='submit'`**。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_web26_Web-ru-men-_ctf.show.html</guid><pubDate>Sun, 13 Sep 2026 11:13:42 +0000</pubDate></item><item><title>WriteUp_web25_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web25_Web-ru-men-_ctf.show.html</link><description>题目提示`爆个🔨，不爆了`，所以这题还是得智取
 ```php
 &lt;?php
 
