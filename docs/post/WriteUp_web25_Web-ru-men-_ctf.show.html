@@ -269,7 +269,7 @@ Found 3
 <p>其实网页版 <a href="https://php-play.dev/?c=DwfgDgFmAEC2AuB9AzgJwIYDsAmAKXAlpvAJQBMArAAwAcAzGQGwCcjdJA3AKYDGEA9nCQYcuTrwHQARAB8p3PoISIReEgGplqsRxAA%2BIA&amp;v=8.5&amp;f=html" rel="nofollow">PHP Playground</a> 也不是不能用，只是需要在随机数种子前加上 <code class="notranslate">(int)</code> 强制类型转换，而且会报一条 Warning</p>
 <pre class="notranslate"><code class="notranslate">&lt;?php mt_srand((int)2508326963);echo mt_rand();echo "|";echo mt_rand()+mt_rand();?&gt;
 </code></pre>
-<p>在 URL 后拼接 <code class="notranslate">/?r=1514623366</code>（第一个随机数），点击 HackBar 中的 MODIFY HEADER 并将 Cookie 设为 <code class="notranslate">token=2335728148</code>（第二个和第三个随机数的和），点击 Execute 即可获得 flag <code class="notranslate">ctfshow{7e19dc1e-0d07-47ce-a791-29b87681650c}</code>。</p>
+<p>在 URL 后拼接 <code class="notranslate">/?r=1514623366</code>（第一个随机数），点击 <a href="https://chromewebstore.google.com/detail/hackbar/ginpbkfigcoaokgflihfhhmglmbchinc" rel="nofollow">HackBar</a> 中的 MODIFY HEADER 并将 Cookie 设为 <code class="notranslate">token=2335728148</code>（第二个和第三个随机数的和），点击 EXECUTE 即可获得 flag <code class="notranslate">ctfshow{7e19dc1e-0d07-47ce-a791-29b87681650c}</code>。</p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/07ff1d0c-a475-4783-a1a9-c315cfe9b53c"><img width="1062" height="375" alt="Image" src="https://github.com/user-attachments/assets/07ff1d0c-a475-4783-a1a9-c315cfe9b53c" style="max-width: 100%; height: auto; max-height: 375px;; aspect-ratio: 1062 / 375; background-color: var(--bgColor-muted); border-radius: 6px" class="js-gh-image-fallback"></a></p>
 <pre class="notranslate"><code class="notranslate"></code></pre></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
