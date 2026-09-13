@@ -1,5 +1,48 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Thu, 28 May 2026 13:38:30 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web22_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web22_Web-ru-men-_ctf.show.html</link><description>已失效无法完成
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Sun, 13 Sep 2026 04:36:52 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web24_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web24_Web-ru-men-_ctf.show.html</link><description>准备像上一题一样循环暴力破解，跑的时候卡住了跑不出来突然发现这不是固定种子随机数吗，直接把随机数算出来就行了，因为这种伪随机数算法对于同一个随机数种子来说每次算出的随机数都是相同的，在 URL 后拼接 `/?r=1155388967` 即可获得 flag `ctfshow{e0b5f9a7-dcc0-425a-bd48-f56f315ab76a}`
+```php
+&lt;?php
+    // for($i=0;;$i++) {
+        if(true){
+            $r = $i;
+            mt_srand(372619038);
+            echo intval(mt_rand());
+            //if(intval($r)===intval(mt_rand())){
+                //echo $r;
+            //}
+        }   
+    // }
+?&gt;
+```。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_web24_Web-ru-men-_ctf.show.html</guid><pubDate>Sun, 13 Sep 2026 04:34:38 +0000</pubDate></item><item><title>WriteUp_web23_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web23_Web-ru-men-_ctf.show.html</link><description>```php
+&lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-03 11:43:51
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-03 11:56:11
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+error_reporting(0);
+
+include('flag.php');
+if(isset($_GET['token'])){
+    $token = md5($_GET['token']);
+    if(substr($token, 1,1)===substr($token, 14,1) &amp;&amp; substr($token, 14,1) ===substr($token, 17,1)){
+        if((intval(substr($token, 1,1))+intval(substr($token, 14,1))+substr($token, 17,1))/substr($token, 1,1)===intval(substr($token, 31,1))){
+            echo $flag;
+        }
+    }
+}else{
+    highlight_file(__FILE__);
+
+}
+?&gt;
+```
+因为这题属于爆破考虑直接改造题目提供的代码暴力计算从1开始的自然数的md5找到能通过校验获取 flag 的值，因为对 PHP 不熟悉加上很久没有自己手写代码了借助 AI 分析报错原因和修正代码逻辑三轮才写出能用的代码，得到 token=422 时可以通过条件检查，在URL后拼接 /?token=422 即可获得 flag `ctfshow{4906bbb7-13b6-442a-87a9-e8576d70a0e3}`。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_web23_Web-ru-men-_ctf.show.html</guid><pubDate>Sun, 13 Sep 2026 04:22:26 +0000</pubDate></item><item><title>WriteUp_web22_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web22_Web-ru-men-_ctf.show.html</link><description>已失效无法完成
 
 ```
 域名也可以爆破的，试试爆破这个ctf.show的子域名

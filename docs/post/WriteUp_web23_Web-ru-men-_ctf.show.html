@@ -10,46 +10,72 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="今天发现 Edge 的 UA 就在末尾多了个 `Edg/142.0.0.0` 居然在抖音网页版观看视频时不能获取 4K 的画质，而 Brave 可以，之前使用 Firefox 浏览器的时候也遇到过这种问题，现在应该也适用于 Firefox
-使用[User-Agent Switcher and Manager](https://chromewebstore.google.com/detail/user-agent-switcher-and-m/bhchdcejhohfmigjafbampogmaanbfkg)伪装支持4K的User Agent就会有4K，下面是我测试过能获得 4K 画质选项的 UA，来自 `Brave 1.84.141 Chromium: 142.0.7444.176 (正式版本) （64 位）`
+<meta name="description" content="```php
+<?php
 
-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-03 11:43:51
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-03 11:56:11
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
 
-打开设置切换到自定义模式并粘贴以下内容并滚动到页面底部保存即可，可以通过 <https://check.retiehe.com/> 检查是否生效
+*/
+error_reporting(0);
 
-```
-{
-  'check.retiehe.com': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36',
-  'www.douyin.com': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+include('flag.php');
+if(isset($_GET['token'])){
+    $token = md5($_GET['token']);
+    if(substr($token, 1,1)===substr($token, 14,1) && substr($token, 14,1) ===substr($token, 17,1)){
+        if((intval(substr($token, 1,1))+intval(substr($token, 14,1))+substr($token, 17,1))/substr($token, 1,1)===intval(substr($token, 31,1))){
+            echo $flag;
+        }
+    }
+}else{
+    highlight_file(__FILE__);
+
 }
+?>
 ```
+因为这题属于爆破考虑直接改造题目提供的代码暴力计算从1开始的自然数的md5找到能通过校验获取 flag 的值，因为对 PHP 不熟悉加上很久没有自己手写代码了借助 AI 分析报错原因和修正代码逻辑三轮才写出能用的代码，得到 token=422 时可以通过条件检查，在URL后拼接 /?token=422 即可获得 flag `ctfshow{4906bbb7-13b6-442a-87a9-e8576d70a0e3}`。">
+<meta property="og:title" content="WriteUp_web23_Web入门_ctf.show">
+<meta property="og:description" content="```php
+<?php
 
-<img width='901' height='766' alt='Image' src='https://github.com/user-attachments/assets/9414e675-f81f-4ff6-a887-a019b0f5840d' />
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-03 11:43:51
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-03 11:56:11
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
 
-<img width='1533' height='1567' alt='Image' src='https://github.com/user-attachments/assets/64c9c99d-d508-4a3f-b454-c511dc57c83a' />。">
-<meta property="og:title" content="Edge/Firefox等浏览器在抖音网页版伪装User Agent获取/解锁4K画质选项">
-<meta property="og:description" content="今天发现 Edge 的 UA 就在末尾多了个 `Edg/142.0.0.0` 居然在抖音网页版观看视频时不能获取 4K 的画质，而 Brave 可以，之前使用 Firefox 浏览器的时候也遇到过这种问题，现在应该也适用于 Firefox
-使用[User-Agent Switcher and Manager](https://chromewebstore.google.com/detail/user-agent-switcher-and-m/bhchdcejhohfmigjafbampogmaanbfkg)伪装支持4K的User Agent就会有4K，下面是我测试过能获得 4K 画质选项的 UA，来自 `Brave 1.84.141 Chromium: 142.0.7444.176 (正式版本) （64 位）`
+*/
+error_reporting(0);
 
-Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+include('flag.php');
+if(isset($_GET['token'])){
+    $token = md5($_GET['token']);
+    if(substr($token, 1,1)===substr($token, 14,1) && substr($token, 14,1) ===substr($token, 17,1)){
+        if((intval(substr($token, 1,1))+intval(substr($token, 14,1))+substr($token, 17,1))/substr($token, 1,1)===intval(substr($token, 31,1))){
+            echo $flag;
+        }
+    }
+}else{
+    highlight_file(__FILE__);
 
-打开设置切换到自定义模式并粘贴以下内容并滚动到页面底部保存即可，可以通过 <https://check.retiehe.com/> 检查是否生效
-
-```
-{
-  'check.retiehe.com': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36',
-  'www.douyin.com': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
 }
+?>
 ```
-
-<img width='901' height='766' alt='Image' src='https://github.com/user-attachments/assets/9414e675-f81f-4ff6-a887-a019b0f5840d' />
-
-<img width='1533' height='1567' alt='Image' src='https://github.com/user-attachments/assets/64c9c99d-d508-4a3f-b454-c511dc57c83a' />。">
+因为这题属于爆破考虑直接改造题目提供的代码暴力计算从1开始的自然数的md5找到能通过校验获取 flag 的值，因为对 PHP 不熟悉加上很久没有自己手写代码了借助 AI 分析报错原因和修正代码逻辑三轮才写出能用的代码，得到 token=422 时可以通过条件检查，在URL后拼接 /?token=422 即可获得 flag `ctfshow{4906bbb7-13b6-442a-87a9-e8576d70a0e3}`。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://Ayx03.github.io/Gmeek/post/Edge-Firefox-deng-liu-lan-qi-zai-dou-yin-wang-ye-ban-wei-zhuang-User%20Agent-huo-qu---jie-suo-4K-hua-zhi-xuan-xiang.html">
+<meta property="og:url" content="https://Ayx03.github.io/Gmeek/post/WriteUp_web23_Web-ru-men-_ctf.show.html">
 <meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
-<title>Edge/Firefox等浏览器在抖音网页版伪装User Agent获取/解锁4K画质选项</title>
-
+<title>WriteUp_web23_Web入门_ctf.show</title>
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 </head>
@@ -91,7 +117,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <body>
     <div id="header">
-<h1 class="postTitle">Edge/Firefox等浏览器在抖音网页版伪装User Agent获取/解锁4K画质选项</h1>
+<h1 class="postTitle">WriteUp_web23_Web入门_ctf.show</h1>
 <div class="title-right">
     <a href="https://Ayx03.github.io/Gmeek" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
@@ -99,7 +125,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         </svg>
     </a>
     
-    <a href="https://github.com/Ayx03/Gmeek/issues/23" target="_blank" class="btn btn-invisible circle" title="Issue">
+    <a href="https://github.com/Ayx03/Gmeek/issues/51" target="_blank" class="btn btn-invisible circle" title="Issue">
         <svg class="octicon" width="16" height="16">
             <path id="pathIssue" fill-rule="evenodd"></path>
         </svg>
@@ -115,17 +141,46 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>今天发现 Edge 的 UA 就在末尾多了个 <code class="notranslate">Edg/142.0.0.0</code> 居然在抖音网页版观看视频时不能获取 4K 的画质，而 Brave 可以，之前使用 Firefox 浏览器的时候也遇到过这种问题，现在应该也适用于 Firefox<br>
-使用<a href="https://chromewebstore.google.com/detail/user-agent-switcher-and-m/bhchdcejhohfmigjafbampogmaanbfkg" rel="nofollow">User-Agent Switcher and Manager</a>伪装支持4K的User Agent就会有4K，下面是我测试过能获得 4K 画质选项的 UA，来自 <code class="notranslate">Brave 1.84.141 Chromium: 142.0.7444.176 (正式版本) （64 位）</code></p>
-<p>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36</p>
-<p>打开设置切换到自定义模式并粘贴以下内容并滚动到页面底部保存即可，可以通过 <a href="https://check.retiehe.com/" rel="nofollow">https://check.retiehe.com/</a> 检查是否生效</p>
-<pre class="notranslate"><code class="notranslate">{
-  "check.retiehe.com": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
-  "www.douyin.com": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+<div class="markdown-body" id="postBody"><div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-ent">&lt;?php</span>
+
+<span class="pl-c">/*</span>
+<span class="pl-c"># -*- coding: utf-8 -*-</span>
+<span class="pl-c"># @Author: h1xa</span>
+<span class="pl-c"># @Date:   2020-09-03 11:43:51</span>
+<span class="pl-c"># @Last Modified by:   h1xa</span>
+<span class="pl-c"># @Last Modified time: 2020-09-03 11:56:11</span>
+<span class="pl-c"># @email: h1xa@ctfer.com</span>
+<span class="pl-c"># @link: https://ctfer.com</span>
+<span class="pl-c"></span>
+<span class="pl-c">*/</span>
+<span class="pl-en">error_reporting</span>(<span class="pl-c1">0</span>);
+
+<span class="pl-k">include</span>(<span class="pl-s">'<span class="pl-s">flag.php</span>'</span>);
+<span class="pl-k">if</span>(<span class="pl-en">isset</span>(<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_GET</span></span>[<span class="pl-s">'<span class="pl-s">token</span>'</span>])){
+    <span class="pl-s1"><span class="pl-c1">$</span>token</span> = <span class="pl-en">md5</span>(<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_GET</span></span>[<span class="pl-s">'<span class="pl-s">token</span>'</span>]);
+    <span class="pl-k">if</span>(<span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>token</span>, <span class="pl-c1">1</span>,<span class="pl-c1">1</span>)===<span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>token</span>, <span class="pl-c1">14</span>,<span class="pl-c1">1</span>) &amp;&amp; <span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>token</span>, <span class="pl-c1">14</span>,<span class="pl-c1">1</span>) ===<span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>token</span>, <span class="pl-c1">17</span>,<span class="pl-c1">1</span>)){
+        <span class="pl-k">if</span>((<span class="pl-en">intval</span>(<span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>token</span>, <span class="pl-c1">1</span>,<span class="pl-c1">1</span>))+<span class="pl-en">intval</span>(<span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>token</span>, <span class="pl-c1">14</span>,<span class="pl-c1">1</span>))+<span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>token</span>, <span class="pl-c1">17</span>,<span class="pl-c1">1</span>))/<span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>token</span>, <span class="pl-c1">1</span>,<span class="pl-c1">1</span>)===<span class="pl-en">intval</span>(<span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>token</span>, <span class="pl-c1">31</span>,<span class="pl-c1">1</span>))){
+            <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>flag</span>;
+        }
+    }
+}<span class="pl-k">else</span>{
+    <span class="pl-en">highlight_file</span>(<span class="pl-c1">__FILE__</span>);
+
 }
-</code></pre>
-<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/9414e675-f81f-4ff6-a887-a019b0f5840d"><img width="901" height="766" alt="Image" src="https://github.com/user-attachments/assets/9414e675-f81f-4ff6-a887-a019b0f5840d" style="max-width: 100%; height: auto; max-height: 766px;; aspect-ratio: 901 / 766; background-color: var(--bgColor-muted); border-radius: 6px" class="js-gh-image-fallback"></a></p>
-<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/64c9c99d-d508-4a3f-b454-c511dc57c83a"><img width="1533" height="1567" alt="Image" src="https://github.com/user-attachments/assets/64c9c99d-d508-4a3f-b454-c511dc57c83a" style="max-width: 100%; height: auto; max-height: 1567px;; aspect-ratio: 1533 / 1567; background-color: var(--bgColor-muted); border-radius: 6px" class="js-gh-image-fallback"></a></p></div>
+<span class="pl-ent">?&gt;</span></pre></div>
+<p>因为这题属于爆破考虑直接改造题目提供的代码暴力计算从1开始的自然数的md5找到能通过校验获取 flag 的值，因为对 PHP 不熟悉加上很久没有自己手写代码了借助 AI 分析报错原因和修正代码逻辑三轮才写出能用的代码，得到 token=422 时可以通过条件检查，在URL后拼接 /?token=422 即可获得 flag <code class="notranslate">ctfshow{4906bbb7-13b6-442a-87a9-e8576d70a0e3}</code>。另外试了一下很明显直接访问 /flag.php 是无法获得 flag 的，别想了（</p>
+<div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-ent">&lt;?php</span>
+<span class="pl-k">for</span>(<span class="pl-s1"><span class="pl-c1">$</span>i</span>=<span class="pl-c1">0</span>;;<span class="pl-s1"><span class="pl-c1">$</span>i</span>++) {
+    <span class="pl-k">if</span>(<span class="pl-c1">true</span>){
+        <span class="pl-s1"><span class="pl-c1">$</span>token</span> = <span class="pl-en">md5</span>(<span class="pl-s1"><span class="pl-c1">$</span>i</span>);
+        <span class="pl-k">if</span>(<span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>token</span>, <span class="pl-c1">1</span>,<span class="pl-c1">1</span>)===<span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>token</span>, <span class="pl-c1">14</span>,<span class="pl-c1">1</span>) &amp;&amp; <span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>token</span>, <span class="pl-c1">14</span>,<span class="pl-c1">1</span>) ===<span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>token</span>, <span class="pl-c1">17</span>,<span class="pl-c1">1</span>)){
+            <span class="pl-k">if</span>((<span class="pl-en">intval</span>(<span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>token</span>, <span class="pl-c1">1</span>,<span class="pl-c1">1</span>))+<span class="pl-en">intval</span>(<span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>token</span>, <span class="pl-c1">14</span>,<span class="pl-c1">1</span>))+<span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>token</span>, <span class="pl-c1">17</span>,<span class="pl-c1">1</span>))/<span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>token</span>, <span class="pl-c1">1</span>,<span class="pl-c1">1</span>)===<span class="pl-en">intval</span>(<span class="pl-en">substr</span>(<span class="pl-s1"><span class="pl-c1">$</span>token</span>, <span class="pl-c1">31</span>,<span class="pl-c1">1</span>))){
+                <span class="pl-k">echo</span> <span class="pl-s1"><span class="pl-c1">$</span>i</span>;
+            }
+        }
+    }
+}
+<span class="pl-ent">?&gt;</span></pre></div></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
@@ -184,11 +239,7 @@ console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 
 <script>
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
-cmButton=document.getElementById("cmButton");
-    span=document.createElement("span");
-    span.setAttribute("class","Counter");
-    span.innerHTML="4";
-    cmButton.appendChild(span);
+
 
 
 function openComments(){
