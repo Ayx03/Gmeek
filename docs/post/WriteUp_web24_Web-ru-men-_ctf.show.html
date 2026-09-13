@@ -10,7 +10,7 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="准备像上一题一样循环暴力破解，跑的时候卡住了跑不出来突然发现这不是固定种子随机数吗，直接把随机数算出来就行了，因为这种伪随机数算法对于同一个随机数种子来说每次算出的随机数都是相同的，在 URL 后拼接 `/?r=1155388967` 即可获得 flag `ctfshow{e0b5f9a7-dcc0-425a-bd48-f56f315ab76a}`
+<meta name="description" content="准备像上一题一样循环暴力破解，跑的时候卡住了跑不出来突然发现这不是固定种子随机数吗，直接把随机数算出来就行了（也符合题目描述中的`爆个🔨`），因为这种伪随机数算法对于同一个随机数种子来说每次算出的随机数都是相同的，在 URL 后拼接 `/?r=1155388967` 即可获得 flag `ctfshow{e0b5f9a7-dcc0-425a-bd48-f56f315ab76a}`
 ```php
 <?php
     // for($i=0;;$i++) {
@@ -26,7 +26,7 @@
 ?>
 ```。">
 <meta property="og:title" content="WriteUp_web24_Web入门_ctf.show">
-<meta property="og:description" content="准备像上一题一样循环暴力破解，跑的时候卡住了跑不出来突然发现这不是固定种子随机数吗，直接把随机数算出来就行了，因为这种伪随机数算法对于同一个随机数种子来说每次算出的随机数都是相同的，在 URL 后拼接 `/?r=1155388967` 即可获得 flag `ctfshow{e0b5f9a7-dcc0-425a-bd48-f56f315ab76a}`
+<meta property="og:description" content="准备像上一题一样循环暴力破解，跑的时候卡住了跑不出来突然发现这不是固定种子随机数吗，直接把随机数算出来就行了（也符合题目描述中的`爆个🔨`），因为这种伪随机数算法对于同一个随机数种子来说每次算出的随机数都是相同的，在 URL 后拼接 `/?r=1155388967` 即可获得 flag `ctfshow{e0b5f9a7-dcc0-425a-bd48-f56f315ab76a}`
 ```php
 <?php
     // for($i=0;;$i++) {
@@ -111,7 +111,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>准备像上一题一样循环暴力破解，跑的时候卡住了跑不出来突然发现这不是固定种子随机数吗，直接把随机数算出来就行了，因为这种伪随机数算法对于同一个随机数种子来说每次算出的随机数都是相同的，在 URL 后拼接 <code class="notranslate">/?r=1155388967</code> 即可获得 flag <code class="notranslate">ctfshow{e0b5f9a7-dcc0-425a-bd48-f56f315ab76a}</code></p>
+<div class="markdown-body" id="postBody"><p>准备像上一题一样循环暴力破解，跑的时候卡住了跑不出来突然发现这不是固定种子随机数吗，直接把随机数算出来就行了（也符合题目描述中的<code class="notranslate">爆个🔨</code>），因为这种伪随机数算法对于同一个随机数种子来说每次算出的随机数都是相同的，在 URL 后拼接 <code class="notranslate">/?r=1155388967</code> 即可获得 flag <code class="notranslate">ctfshow{e0b5f9a7-dcc0-425a-bd48-f56f315ab76a}</code></p>
 <div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-ent">&lt;?php</span>
     <span class="pl-c">// for($i=0;;$i++) {</span>
         <span class="pl-k">if</span>(<span class="pl-c1">true</span>){
