@@ -6,9 +6,13 @@
 爆破的时候去掉2.txt 仅仅爆破目录即可
 ```
 
+在 `Start attack` 按钮左边的下拉列表选择使用 Cluster bomb attack 模式，在第一行的路径中使用 `Add §` 插入两个变量，对两个 Payload position 都选择 Payload type `Numbers`，From `0` To `100` Step `1`，然后 `Start attack`
 ```
-ctfshow{d0460185-d3c3-4120-bade-f48e0de74884}
+GET /§0§/§1§/ HTTP/1.1
 ```
 
+<img width="2560" height="1528" alt="Image" src="https://github.com/user-attachments/assets/91b3a5a4-aeb9-4001-b830-6cfeb883f7eb" />
+
+发现返回长度（Length）有一个最长的 671，返回中包含了 Flag `ctfshow{d0460185-d3c3-4120-bade-f48e0de74884}`
 
 <img width="2560" height="1528" alt="Image" src="https://github.com/user-attachments/assets/1a1ba2c3-35e9-4f47-a332-8337eb4c71a7" />

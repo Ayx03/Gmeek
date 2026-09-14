@@ -88,8 +88,11 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 爆破的时候去掉2.txt 仅仅爆破目录即可
 </code></pre>
-<pre class="notranslate"><code class="notranslate">ctfshow{d0460185-d3c3-4120-bade-f48e0de74884}
+<p>在 <code class="notranslate">Start attack</code> 按钮左边的下拉列表选择使用 Cluster bomb attack 模式，在第一行的路径中使用 <code class="notranslate">Add §</code> 插入两个变量，对两个 Payload position 都选择 Payload type <code class="notranslate">Numbers</code>，From <code class="notranslate">0</code> To <code class="notranslate">100</code> Step <code class="notranslate">1</code>，然后 <code class="notranslate">Start attack</code></p>
+<pre class="notranslate"><code class="notranslate">GET /§0§/§1§/ HTTP/1.1
 </code></pre>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/91b3a5a4-aeb9-4001-b830-6cfeb883f7eb"><img width="2000" height="1194" alt="Image" src="https://github.com/user-attachments/assets/91b3a5a4-aeb9-4001-b830-6cfeb883f7eb" style="max-width: 100%; height: auto; max-height: 1194px;; aspect-ratio: 2000 / 1194; background-color: var(--bgColor-muted); border-radius: 6px" class="js-gh-image-fallback"></a></p>
+<p>发现返回长度（Length）有一个最长的 671，返回中包含了 Flag <code class="notranslate">ctfshow{d0460185-d3c3-4120-bade-f48e0de74884}</code></p>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/1a1ba2c3-35e9-4f47-a332-8337eb4c71a7"><img width="2000" height="1194" alt="Image" src="https://github.com/user-attachments/assets/1a1ba2c3-35e9-4f47-a332-8337eb4c71a7" style="max-width: 100%; height: auto; max-height: 1194px;; aspect-ratio: 2000 / 1194; background-color: var(--bgColor-muted); border-radius: 6px" class="js-gh-image-fallback"></a></p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
