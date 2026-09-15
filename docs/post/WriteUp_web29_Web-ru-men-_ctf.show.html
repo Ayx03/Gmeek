@@ -285,6 +285,23 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>通配符读取：<code class="notranslate">system('cat fla*');</code></li>
 <li>进制/编码转换：<code class="notranslate">readfile(hex2bin('666c61672e706870'));</code> （十六进制对应 <code class="notranslate">flag.php</code>）</li>
 <li>变量覆盖/外部传参：<code class="notranslate">$a='fla'; $b='g.php'; highlight_file($a.$b);</code></li>
+</ul>
+<hr>
+<p>出现前三种失败而第四种成功的情况，通常是由目标环境的具体限制引起的：</p>
+<ul>
+<li><strong>系统命令执行被禁用（<code class="notranslate">disable_functions</code>）</strong>：<br>
+很多题目环境在 <code class="notranslate">php.ini</code> 中通过 <code class="notranslate">disable_functions</code> 禁用了 <code class="notranslate">system</code>、<code class="notranslate">exec</code>、<code class="notranslate">passthru</code>、<code class="notranslate">shell_exec</code> 等函数。因此基于系统命令或通配符（如 <code class="notranslate">cat fla*</code>）的方法会直接失效。</li>
+<li><strong>文件读取与代码高亮差异</strong>：<br>
+若目标文件内容被包裹在 PHP 标签中（例如 <code class="notranslate">&lt;?php $flag = "..."; ?&gt;</code>），使用 <code class="notranslate">file_get_contents</code> 或 <code class="notranslate">readfile</code> 直接输出时，浏览器可能会将其视作 HTML 标签而不予渲染（在源码中可能可见，但在页面表面为空白）。</li>
+<li><strong>第四种生效的原因</strong>：<br>
+<code class="notranslate">highlight_file</code>（或 <code class="notranslate">show_source</code>）会解析并格式化输出 PHP 源码，同时通过变量拆分（如 <code class="notranslate">$a='fla'; $b='g.php';</code>）拼接绕过了对字符串 <code class="notranslate">flag</code> 的正则匹配。</li>
+</ul>
+<hr>
+<p><strong>防御与修复建议</strong></p>
+<p>这种模式的根本风险在于信任了不受控的外部输入并传入了危险执行函数：</p>
+<ul>
+<li>**禁用 <code class="notranslate">eval**</code>：<code class="notranslate">eval</code> 是一个语言构造器而非普通函数，无法通过 <code class="notranslate">disable_functions</code> 简单禁用。在生产代码中应完全避免使用 <code class="notranslate">eval</code> 解析用户数据。</li>
+<li><strong>白名单替代正则黑名单</strong>：基于关键词（如 <code class="notranslate">flag</code>）的黑名单过滤极易被字符串拼接、编码转换或变量引用等方式绕过。涉及动态调用时，应使用严格的白名单机制限制允许执行的操作或参数。</li>
 </ul></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
