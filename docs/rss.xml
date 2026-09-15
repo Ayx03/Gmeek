@@ -1,5 +1,35 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Tue, 15 Sep 2026 02:35:59 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web30_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web30_Web-ru-men-_ctf.show.html</link><description>题目描述依然是`命令执行，需要严格的过滤`，代码中只是额外过滤了 `system` 和 `php`
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Tue, 15 Sep 2026 02:53:20 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web30_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web30_Web-ru-men-_ctf.show.html</link><description>题目提示依然是`命令执行，需要严格的过滤`，但是这题加强了过滤，把单引号`'`和空格` `都过滤了
+```php
+&lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-04 00:12:34
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-04 00:49:10
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+error_reporting(0);
+if(isset($_GET['c'])){
+    $c = $_GET['c'];
+    if(!preg_match('/flag|system|php|cat|sort|shell|\.| |\'/i', $c)){
+        eval($c);
+    }
+    
+}else{
+    highlight_file(__FILE__);
+}
+```
+我让 Gemini 3.8 Flash 给我一些提示，它提到：
+
+**1. 参数传递转义（引入外部变量）**
+
+* `eval($c);` 执行的是一段 PHP 语句。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_web30_Web-ru-men-_ctf.show.html</guid><pubDate>Tue, 15 Sep 2026 02:51:24 +0000</pubDate></item><item><title>WriteUp_web30_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web30_Web-ru-men-_ctf.show.html</link><description>题目描述依然是`命令执行，需要严格的过滤`，代码中只是额外过滤了 `system` 和 `php`
 ```php
 &lt;?php
 

