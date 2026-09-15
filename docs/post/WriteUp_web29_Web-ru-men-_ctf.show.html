@@ -39,7 +39,7 @@ if(isset($_GET['c'])){
 
 由于存在 preg_match 不区分大小写（/i）匹配 flag，命令中不能直接出现 `flag` 否则不会被执行，使用拼接的方式可以不直接出现可被匹配的 `flag` 四个连续字母但达到相同的效果
 
-```
+```php
 $a='fla'; $b='g.php'; highlight_file($a.$b);
 ```
 
@@ -103,7 +103,7 @@ if(isset($_GET['c'])){
 
 由于存在 preg_match 不区分大小写（/i）匹配 flag，命令中不能直接出现 `flag` 否则不会被执行，使用拼接的方式可以不直接出现可被匹配的 `flag` 四个连续字母但达到相同的效果
 
-```
+```php
 $a='fla'; $b='g.php'; highlight_file($a.$b);
 ```
 
@@ -232,8 +232,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <span class="pl-en">highlight_file</span>(<span class="pl-c1">__FILE__</span>);
 }</pre></div>
 <p>由于存在 preg_match 不区分大小写（/i）匹配 flag，命令中不能直接出现 <code class="notranslate">flag</code> 否则不会被执行，使用拼接的方式可以不直接出现可被匹配的 <code class="notranslate">flag</code> 四个连续字母但达到相同的效果</p>
-<pre class="notranslate"><code class="notranslate">$a='fla'; $b='g.php'; highlight_file($a.$b);
-</code></pre>
+<div class="highlight highlight-text-html-php"><pre class="notranslate"><span class="pl-s1"><span class="pl-c1">$</span>a</span>=<span class="pl-s">'<span class="pl-s">fla</span>'</span>; <span class="pl-s1"><span class="pl-c1">$</span>b</span>=<span class="pl-s">'<span class="pl-s">g.php</span>'</span>; <span class="pl-en">highlight_file</span>(<span class="pl-s1"><span class="pl-c1">$</span>a</span>.<span class="pl-s1"><span class="pl-c1">$</span>b</span>);</pre></div>
 <p>经过浏览器自动 URL 编码后是这样的</p>
 <pre class="notranslate"><code class="notranslate">/?c=$a=%27fla%27;%20$b=%27g.php%27;%20highlight_file($a.$b);
 </code></pre>

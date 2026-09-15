@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Tue, 15 Sep 2026 07:31:15 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web32_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web32_Web-ru-men-_ctf.show.html</link><description>```php
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Tue, 15 Sep 2026 19:32:52 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web32_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web32_Web-ru-men-_ctf.show.html</link><description>```php
 &lt;?php
 
 /*
@@ -181,7 +181,7 @@ if(isset($_GET['c'])){
 
 由于存在 preg_match 不区分大小写（/i）匹配 flag，命令中不能直接出现 `flag` 否则不会被执行，使用拼接的方式可以不直接出现可被匹配的 `flag` 四个连续字母但达到相同的效果
 
-```
+```php
 $a='fla'; $b='g.php'; highlight_file($a.$b);
 ```
 

@@ -27,7 +27,7 @@ if(isset($_GET['c'])){
 
 由于存在 preg_match 不区分大小写（/i）匹配 flag，命令中不能直接出现 `flag` 否则不会被执行，使用拼接的方式可以不直接出现可被匹配的 `flag` 四个连续字母但达到相同的效果
 
-```
+```php
 $a='fla'; $b='g.php'; highlight_file($a.$b);
 ```
 
