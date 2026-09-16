@@ -76,7 +76,7 @@ php_mt_seed.c:47:2: warning: #warning AVX-512 not enabled. Try gcc -mavx512f (on
       |  ^~~~~~~
 ```
 （warning 是因为我的 Ryzen 7 7435H CPU 不支持 AVX-512）
-如果你直接使用 gcc 编译的话就会这样：
+如果你直接使用 gcc 编译的话就会这样（可以对比一下和下面用 make 编译的版本的速度区别）：
 ```
 ┌──(ayx㉿AyxPower)-[~]
 └─$ ./php_mt_seed.out 1514623366
