@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Tue, 15 Sep 2026 19:32:52 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web32_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web32_Web-ru-men-_ctf.show.html</link><description>```php
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Ayx的Gmeek博客</title><link>https://Ayx03.github.io/Gmeek</link><description>Aynxul03的又一个博客</description><copyright>Ayx的Gmeek博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Ayx03.github.io/Gmeek</link></image><lastBuildDate>Wed, 16 Sep 2026 12:05:36 +0000</lastBuildDate><managingEditor>Ayx的Gmeek博客</managingEditor><ttl>60</ttl><webMaster>Ayx的Gmeek博客</webMaster><item><title>WriteUp_web32_Web入门_ctf.show</title><link>https://Ayx03.github.io/Gmeek/post/WriteUp_web32_Web-ru-men-_ctf.show.html</link><description>```php
 &lt;?php
 
 /*
@@ -406,7 +406,7 @@ http://flag.ctfer.com/index.php
 
 估计是一个游戏，需要修改分数获得 flag，当然你也可以就硬玩
 
-靶机容器开好了，果然是类似安卓菜单的 Flappy Bird，很难操作，我们直接打开开发人员工具的源代码选项卡，在`js`目录里找到`Flappy_js.js`，发现101分给flag的逻辑：
+靶机容器开好了，果然是类似安卓彩蛋的 Flappy Bird，很难操作，我们直接打开开发人员工具的源代码选项卡，在`js`目录里找到`Flappy_js.js`，发现101分给flag的逻辑：
 
 ```javascript
 if(score&gt;100)
